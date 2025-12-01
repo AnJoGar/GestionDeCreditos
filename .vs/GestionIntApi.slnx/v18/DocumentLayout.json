@@ -1,0 +1,326 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\GestionIntApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\repositorios\\interfaces\\icodigoverificacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\interfaces\\icodigoverificacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\models\\registrorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\models\\registrorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\models\\verificationcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\models\\verificationcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\repositorios\\implementacion\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\implementacion\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\repositorios\\implementacion\\codigoverificacionservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\implementacion\\codigoverificacionservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\controllers\\emailvalidationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\controllers\\emailvalidationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\repositorios\\implementacion\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\implementacion\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\dto\\enviarcodigodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\dto\\enviarcodigodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\dto\\verificardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\dto\\verificardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\models\\sistemagestiondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\models\\sistemagestiondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Migrations\\20251129194709_asada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GestionIntApi\\Migrations\\20251129194709_asada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Migrations\\20251129194517_asada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GestionIntApi\\Migrations\\20251129194517_asada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\controllers\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\controllers\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\user\\source\\repos\\gestionintapi\\gestionintapi\\dto\\resetpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\dto\\resetpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegistroRequest.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Models\\RegistroRequest.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Models\\RegistroRequest.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Models\\RegistroRequest.cs",
+              "RelativeToolTip": "GestionIntApi\\Models\\RegistroRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T20:58:46.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ICodigoVerificacionService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Repositorios\\Interfaces\\ICodigoVerificacionService.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Interfaces\\ICodigoVerificacionService.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Repositorios\\Interfaces\\ICodigoVerificacionService.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Interfaces\\ICodigoVerificacionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T20:23:52.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Program.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Program.cs",
+              "RelativeToolTip": "GestionIntApi\\Program.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEkAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T17:33:10.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CodigoVerificacionService .cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Repositorios\\Implementacion\\CodigoVerificacionService .cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Implementacion\\CodigoVerificacionService .cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Repositorios\\Implementacion\\CodigoVerificacionService .cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Implementacion\\CodigoVerificacionService .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T20:12:38.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Repositorios\\Implementacion\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Implementacion\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Repositorios\\Implementacion\\UsuarioRepository.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Implementacion\\UsuarioRepository.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAcwGkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T22:35:40.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VerificationCode.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Models\\VerificationCode.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Models\\VerificationCode.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Models\\VerificationCode.cs",
+              "RelativeToolTip": "GestionIntApi\\Models\\VerificationCode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T19:37:17.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EmailValidationController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Controllers\\EmailValidationController.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Controllers\\EmailValidationController.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Controllers\\EmailValidationController.cs",
+              "RelativeToolTip": "GestionIntApi\\Controllers\\EmailValidationController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwBkAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T19:52:03.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Repositorios\\Implementacion\\EmailService.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Implementacion\\EmailService.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Repositorios\\Implementacion\\EmailService.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Implementacion\\EmailService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T19:14:05.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EnviarCodigoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\DTO\\EnviarCodigoDTO.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\DTO\\EnviarCodigoDTO.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\DTO\\EnviarCodigoDTO.cs",
+              "RelativeToolTip": "GestionIntApi\\DTO\\EnviarCodigoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T19:56:01.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "VerificarDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\DTO\\VerificarDTO.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\DTO\\VerificarDTO.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\DTO\\VerificarDTO.cs",
+              "RelativeToolTip": "GestionIntApi\\DTO\\VerificarDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T19:50:44.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SistemaGestionDBcontext.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Models\\SistemaGestionDBcontext.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Models\\SistemaGestionDBcontext.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Models\\SistemaGestionDBcontext.cs",
+              "RelativeToolTip": "GestionIntApi\\Models\\SistemaGestionDBcontext.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T19:41:04.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "GestionIntApi\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAiwDYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T17:26:53.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "20251129194709_asada.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Migrations\\20251129194709_asada.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Migrations\\20251129194709_asada.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Migrations\\20251129194709_asada.cs",
+              "RelativeToolTip": "GestionIntApi\\Migrations\\20251129194709_asada.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T19:47:09.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20251129194517_asada.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Migrations\\20251129194517_asada.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Migrations\\20251129194517_asada.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Migrations\\20251129194517_asada.cs",
+              "RelativeToolTip": "GestionIntApi\\Migrations\\20251129194517_asada.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T19:45:18.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Models\\Usuario.cs",
+              "RelativeToolTip": "GestionIntApi\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwA8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T19:00:28.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UsuarioDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\DTO\\UsuarioDTO.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\DTO\\UsuarioDTO.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\DTO\\UsuarioDTO.cs",
+              "RelativeToolTip": "GestionIntApi\\DTO\\UsuarioDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T19:00:14.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PasswordController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Controllers\\PasswordController.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Controllers\\PasswordController.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\Controllers\\PasswordController.cs",
+              "RelativeToolTip": "GestionIntApi\\Controllers\\PasswordController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T17:29:10.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ResetPasswordDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\DTO\\ResetPasswordDTO.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\DTO\\ResetPasswordDTO.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GestionIntApi\\GestionIntApi\\DTO\\ResetPasswordDTO.cs",
+              "RelativeToolTip": "GestionIntApi\\DTO\\ResetPasswordDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T18:24:48.935Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
