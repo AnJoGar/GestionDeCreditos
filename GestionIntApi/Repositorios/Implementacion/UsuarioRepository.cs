@@ -1,15 +1,16 @@
-﻿using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using System.Linq;
+﻿using AutoMapper;
+using BCrypt.Net;
+using GestionIntApi.DTO;
+using GestionIntApi.Models;
+using GestionIntApi.Repositorios;
 using GestionIntApi.Repositorios.Contrato;
 using GestionIntApi.Repositorios.Interfaces;
-using GestionIntApi.Repositorios;
-using GestionIntApi.Models;
-using GestionIntApi.DTO;
 using Microsoft.EntityFrameworkCore;
-using BCrypt.Net;
+using System;
+using System.Linq;
 using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
 
 
 
@@ -19,11 +20,14 @@ namespace GestionIntApi.Repositorios.Implementacion
     {
         private readonly IGenericRepository<Usuario> _UsuarioRepositorio;
         private readonly IMapper _mapper;
+        private readonly SistemaGestionDBcontext _context;
 
-        public UsuarioRepository(IGenericRepository<Usuario> usuarioRepositorio, IMapper mapper)
+        public UsuarioRepository(IGenericRepository<Usuario> usuarioRepositorio, IMapper mapper, SistemaGestionDBcontext sistemaGestionDBcontext)
         {
             _UsuarioRepositorio = usuarioRepositorio;
             _mapper = mapper;
+            _context = sistemaGestionDBcontext;
+           
         }
 
         public async Task<List<UsuarioDTO>> listaUsuarios()
@@ -86,6 +90,7 @@ namespace GestionIntApi.Repositorios.Implementacion
         {
             try
             {
+
                 // Encripta la contraseña del modelo
                 string hashedPassword = BCrypt.Net.BCrypt.HashPassword(modelo.Clave);
                 // Actualiza la propiedad 'Clave' del modelo con la contraseña encriptada
@@ -147,6 +152,12 @@ namespace GestionIntApi.Repositorios.Implementacion
             {
                 throw;
             }
+        }
+
+        public async Task<bool> ExisteCorreo(string correo)
+        {
+            return await _context.Usuarios
+                                 .AnyAsync(u => u.Correo.ToLower() == correo.ToLower());
         }
     }
 }

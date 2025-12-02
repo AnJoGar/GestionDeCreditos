@@ -15,5 +15,6 @@ namespace GestionIntApi.Repositorios.Interfaces
         Task<bool> editarUsuario(UsuarioDTO modelo);
         Task<bool> eliminarUsuario(int id);
         Task<UsuarioDTO> obtenerPorIdUsuario(int id);
+        Task<bool> ExisteCorreo(string correo);
     }
 }

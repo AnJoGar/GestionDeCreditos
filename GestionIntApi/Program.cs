@@ -54,6 +54,7 @@ builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 builder.Services.AddTransient<IEmailService, EmailService>();
 builder.Services.AddSingleton<ICodigoVerificacionService, CodigoVerificacionService>();
+builder.Services.AddSingleton<IRegistroTemporalService, RegistroTemporalService>();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
 {

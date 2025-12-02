@@ -1,20 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using AutoMapper;
+using GestionIntApi.DTO;
+using GestionIntApi.DTO;
+using GestionIntApi.Models;
+using GestionIntApi.Repositorios.Contrato;
+using GestionIntApi.Repositorios.Contrato;
+using GestionIntApi.Repositorios.Implementacion;
+using GestionIntApi.Repositorios.Implementacion;
+using GestionIntApi.Repositorios.Interfaces;
+using GestionIntApi.Repositorios.Interfaces;
+using GestionIntApi.Utilidades;
+using GestionIntApi.Utilidades;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using GestionIntApi.Repositorios.Contrato;
-using GestionIntApi.DTO;
-using GestionIntApi.Utilidades;
-using GestionIntApi.Repositorios.Interfaces;
-using GestionIntApi.Repositorios.Implementacion;
-using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using GestionIntApi.Repositorios.Contrato;
-using GestionIntApi.DTO;
-using GestionIntApi.Utilidades;
-using GestionIntApi.Repositorios.Interfaces;
-using GestionIntApi.Repositorios.Implementacion;
-using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 
 
 
@@ -25,9 +26,16 @@ namespace GestionIntApi.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioRepository _UsuarioServicios;
-        public UsuarioController(IUsuarioRepository usuarioServicios)
+        private readonly ICodigoVerificacionService _codigoService;
+        private readonly IEmailService _emailService;
+        private readonly IRegistroTemporalService _registroTemporal;
+
+        public UsuarioController(IUsuarioRepository usuarioServicios, ICodigoVerificacionService codigoService, IEmailService emailService, IRegistroTemporalService registroTemporal)
         {
             _UsuarioServicios = usuarioServicios;
+            _codigoService = codigoService;
+            _emailService = emailService;
+            _registroTemporal = registroTemporal;
         }
 
         [HttpPost]
@@ -89,8 +97,37 @@ namespace GestionIntApi.Controllers
             var rsp = new Response<UsuarioDTO>();
             try
             {
+                var existe = await _UsuarioServicios.ExisteCorreo(usuario.Correo);
+                if (existe)
+                {
+                    rsp.status = false;
+                    rsp.msg = "El correo ya está registrado.";
+                    return BadRequest(rsp);
+                }
+
+                //  var newUser = await _UsuarioServicios.crearUsuario(usuario);
+
+                // 2. Generar Código
+                var codigo = new Random().Next(100000, 999999).ToString();
+
+                var datos = new RegistroTemporal
+                {
+                    Usuario = usuario,
+                    Codigo = codigo
+                };
+
+                // 3. Guardar el código temporal asociado al correo del usuario
+                //  _codigoService.GuardarCodigo(usuario.Correo, codigo);
+                _registroTemporal.GuardarRegistro(usuario.Correo, datos);
+                // 4. Enviar correo
+                await _emailService.SendEmailAsync(
+                    usuario.Correo,
+                    "Código de verificación",
+                    $"<h3>Tu código es: <b>{codigo}</b></h3>"
+                );
                 rsp.status = true;
-                rsp.value = await _UsuarioServicios.crearUsuario(usuario);
+                rsp.msg = "Código enviado. Verifique su correo.";
+               // rsp.value = await _UsuarioServicios.crearUsuario(usuario);
             }
             catch (Exception ex)
             {

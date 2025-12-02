@@ -378,6 +378,11 @@
         "additionalProperties": false
       },
       "UsuarioDTO": {
+        "required": [
+          "clave",
+          "correo",
+          "nombreApellidos"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -385,12 +390,13 @@
             "format": "int32"
           },
           "nombreApellidos": {
-            "type": "string",
-            "nullable": true
+            "minLength": 3,
+            "type": "string"
           },
           "correo": {
+            "minLength": 1,
             "type": "string",
-            "nullable": true
+            "format": "email"
           },
           "rolId": {
             "type": "integer",
@@ -402,8 +408,8 @@
             "nullable": true
           },
           "clave": {
-            "type": "string",
-            "nullable": true
+            "minLength": 6,
+            "type": "string"
           },
           "esActivo": {
             "type": "integer",
