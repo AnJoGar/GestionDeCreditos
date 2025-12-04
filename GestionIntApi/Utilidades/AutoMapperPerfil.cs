@@ -50,6 +50,19 @@ namespace GestionIntApi.Utilidades
 
             #endregion Usuario
 
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         }
 
 

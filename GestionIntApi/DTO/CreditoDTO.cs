@@ -3,6 +3,8 @@
     public class CreditoDTO
     {
 
+        public int Id { get; set; }
+
         public decimal Monto { get; set; }
         public int PlazoCuotas { get; set; }
         public string FrecuenciaPago { get; set; }

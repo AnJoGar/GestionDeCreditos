@@ -22,6 +22,36 @@ namespace GestionIntApi.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("ClienteCredito", b =>
+                {
+                    b.Property<int>("ClientesId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("CreditosId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ClientesId", "CreditosId");
+
+                    b.HasIndex("CreditosId");
+
+                    b.ToTable("ClienteCredito");
+                });
+
+            modelBuilder.Entity("ClienteTienda", b =>
+                {
+                    b.Property<int>("ClientesId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TiendasId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ClientesId", "TiendasId");
+
+                    b.HasIndex("TiendasId");
+
+                    b.ToTable("ClienteTienda");
+                });
+
             modelBuilder.Entity("GestionIntApi.Models.Cliente", b =>
                 {
                     b.Property<int>("Id")
@@ -30,13 +60,7 @@ namespace GestionIntApi.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CreditoId")
-                        .HasColumnType("integer");
-
                     b.Property<int>("DetalleClienteID")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TiendaId")
                         .HasColumnType("integer");
 
                     b.Property<int>("UsuarioId")
@@ -44,12 +68,8 @@ namespace GestionIntApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreditoId");
-
                     b.HasIndex("DetalleClienteID")
                         .IsUnique();
-
-                    b.HasIndex("TiendaId");
 
                     b.HasIndex("UsuarioId")
                         .IsUnique();
@@ -321,23 +341,41 @@ namespace GestionIntApi.Migrations
                     b.ToTable("VerificationCode");
                 });
 
-            modelBuilder.Entity("GestionIntApi.Models.Cliente", b =>
+            modelBuilder.Entity("ClienteCredito", b =>
                 {
-                    b.HasOne("GestionIntApi.Models.Credito", "Credito")
-                        .WithMany("Clientes")
-                        .HasForeignKey("CreditoId")
+                    b.HasOne("GestionIntApi.Models.Cliente", null)
+                        .WithMany()
+                        .HasForeignKey("ClientesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("GestionIntApi.Models.Credito", null)
+                        .WithMany()
+                        .HasForeignKey("CreditosId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ClienteTienda", b =>
+                {
+                    b.HasOne("GestionIntApi.Models.Cliente", null)
+                        .WithMany()
+                        .HasForeignKey("ClientesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GestionIntApi.Models.Tienda", null)
+                        .WithMany()
+                        .HasForeignKey("TiendasId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("GestionIntApi.Models.Cliente", b =>
+                {
                     b.HasOne("GestionIntApi.Models.DetalleCliente", "DetalleCliente")
                         .WithOne("Cliente")
                         .HasForeignKey("GestionIntApi.Models.Cliente", "DetalleClienteID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GestionIntApi.Models.Tienda", "Tienda")
-                        .WithMany("Clientes")
-                        .HasForeignKey("TiendaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -347,11 +385,7 @@ namespace GestionIntApi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Credito");
-
                     b.Navigation("DetalleCliente");
-
-                    b.Navigation("Tienda");
 
                     b.Navigation("Usuario");
                 });
@@ -380,11 +414,6 @@ namespace GestionIntApi.Migrations
                     b.Navigation("Rol");
                 });
 
-            modelBuilder.Entity("GestionIntApi.Models.Credito", b =>
-                {
-                    b.Navigation("Clientes");
-                });
-
             modelBuilder.Entity("GestionIntApi.Models.DetalleCliente", b =>
                 {
                     b.Navigation("Cliente")
@@ -401,11 +430,6 @@ namespace GestionIntApi.Migrations
                     b.Navigation("MenuRols");
 
                     b.Navigation("Usuarios");
-                });
-
-            modelBuilder.Entity("GestionIntApi.Models.Tienda", b =>
-                {
-                    b.Navigation("Clientes");
                 });
 
             modelBuilder.Entity("GestionIntApi.Models.Usuario", b =>

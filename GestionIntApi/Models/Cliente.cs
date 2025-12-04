@@ -9,11 +9,9 @@
         // Relación con DetallCliente
         public int DetalleClienteID { get; set; }
         public DetalleCliente DetalleCliente { get; set; }
-        // Relación con tienda
-        public int TiendaId { get; set; }
-        public Tienda Tienda { get; set; }
 
-        // Relación uno a uno con crédito
-        public Credito Credito { get; set; }
+        public ICollection<Tienda> Tiendas { get; set; }
+
+        public ICollection<Credito> Creditos { get; set; }
     }
 }

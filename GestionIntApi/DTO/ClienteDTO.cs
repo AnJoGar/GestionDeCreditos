@@ -4,17 +4,13 @@
     {
         public int Id { get; set; }
 
-        public string NumeroCedula { get; set; }
-        public string NombreApellidos { get; set; }
-        public string Telefono { get; set; }
-        public string Direccion { get; set; }
+        public int UsuarioId { get; set; }
+        public UsuarioDTO Usuario { get; set; }
 
-        public string? FotoClienteUrl { get; set; }
-        public string? FotoCelularEntregadoUrl { get; set; }
+        public int DetalleClienteID { get; set; }
+        public DetalleClienteDTO DetalleCliente { get; set; }
 
-        public string NombreTienda { get; set; }
-        public string CodigoTienda { get; set; }
-
-        public CreditoDTO Credito { get; set; }
+        public List<TiendaDTO> Tiendas { get; set; }
+        public List<CreditoDTO> Creditos { get; set; }
     }
 }

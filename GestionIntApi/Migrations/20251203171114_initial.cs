@@ -184,29 +184,15 @@ namespace GestionIntApi.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UsuarioId = table.Column<int>(type: "integer", nullable: false),
-                    DetalleClienteID = table.Column<int>(type: "integer", nullable: false),
-                    TiendaId = table.Column<int>(type: "integer", nullable: false),
-                    CreditoId = table.Column<int>(type: "integer", nullable: false)
+                    DetalleClienteID = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Clientes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Clientes_Creditos_CreditoId",
-                        column: x => x.CreditoId,
-                        principalTable: "Creditos",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_Clientes_DetallesCliente_DetalleClienteID",
                         column: x => x.DetalleClienteID,
                         principalTable: "DetallesCliente",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Clientes_Tiendas_TiendaId",
-                        column: x => x.TiendaId,
-                        principalTable: "Tiendas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -217,10 +203,58 @@ namespace GestionIntApi.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "ClienteCredito",
+                columns: table => new
+                {
+                    ClientesId = table.Column<int>(type: "integer", nullable: false),
+                    CreditosId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClienteCredito", x => new { x.ClientesId, x.CreditosId });
+                    table.ForeignKey(
+                        name: "FK_ClienteCredito_Clientes_ClientesId",
+                        column: x => x.ClientesId,
+                        principalTable: "Clientes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ClienteCredito_Creditos_CreditosId",
+                        column: x => x.CreditosId,
+                        principalTable: "Creditos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ClienteTienda",
+                columns: table => new
+                {
+                    ClientesId = table.Column<int>(type: "integer", nullable: false),
+                    TiendasId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClienteTienda", x => new { x.ClientesId, x.TiendasId });
+                    table.ForeignKey(
+                        name: "FK_ClienteTienda_Clientes_ClientesId",
+                        column: x => x.ClientesId,
+                        principalTable: "Clientes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ClienteTienda_Tiendas_TiendasId",
+                        column: x => x.TiendasId,
+                        principalTable: "Tiendas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
-                name: "IX_Clientes_CreditoId",
-                table: "Clientes",
-                column: "CreditoId");
+                name: "IX_ClienteCredito_CreditosId",
+                table: "ClienteCredito",
+                column: "CreditosId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Clientes_DetalleClienteID",
@@ -229,15 +263,15 @@ namespace GestionIntApi.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Clientes_TiendaId",
-                table: "Clientes",
-                column: "TiendaId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Clientes_UsuarioId",
                 table: "Clientes",
                 column: "UsuarioId",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ClienteTienda_TiendasId",
+                table: "ClienteTienda",
+                column: "TiendasId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MenuRols_MenuId",
@@ -259,7 +293,10 @@ namespace GestionIntApi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Clientes");
+                name: "ClienteCredito");
+
+            migrationBuilder.DropTable(
+                name: "ClienteTienda");
 
             migrationBuilder.DropTable(
                 name: "EmailSettings");
@@ -274,16 +311,19 @@ namespace GestionIntApi.Migrations
                 name: "Creditos");
 
             migrationBuilder.DropTable(
-                name: "DetallesCliente");
+                name: "Clientes");
 
             migrationBuilder.DropTable(
                 name: "Tiendas");
 
             migrationBuilder.DropTable(
-                name: "Usuarios");
+                name: "Menus");
 
             migrationBuilder.DropTable(
-                name: "Menus");
+                name: "DetallesCliente");
+
+            migrationBuilder.DropTable(
+                name: "Usuarios");
 
             migrationBuilder.DropTable(
                 name: "Rol");

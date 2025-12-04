@@ -20,5 +20,8 @@ namespace GestionIntApi.DTO
         [MinLength(6, ErrorMessage = "La clave debe tener mínimo 6 caracteres")]
         public string? Clave { get; set; }
         public int? EsActivo { get; set; }
+
+
+        public ClienteDTO Cliente { get; set; }
     }
 }

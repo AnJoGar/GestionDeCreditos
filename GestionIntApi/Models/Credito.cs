@@ -14,9 +14,6 @@
         public decimal TotalPagar { get; set; }
         public DateTime ProximaCuota { get; set; }
 
-        // Relación con cliente
-        // public int ClienteId { get; set; }
-        // public Cliente Cliente { get; set; }
 
         public ICollection<Cliente> Clientes { get; set; }
     }
