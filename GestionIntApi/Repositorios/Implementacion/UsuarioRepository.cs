@@ -19,15 +19,23 @@ namespace GestionIntApi.Repositorios.Implementacion
     public class UsuarioRepository : IUsuarioRepository
     {
         private readonly IGenericRepository<Usuario> _UsuarioRepositorio;
+        private readonly IGenericRepository<Cliente> _ClienteRepositorio;
+        private readonly IGenericRepository<DetalleCliente> _DetalleRepositorio;
+        private readonly IGenericRepository<Credito> _CreditoRepositorio;
+        private readonly IGenericRepository<Tienda> _TiendaRepositorio;
         private readonly IMapper _mapper;
         private readonly SistemaGestionDBcontext _context;
 
-        public UsuarioRepository(IGenericRepository<Usuario> usuarioRepositorio, IMapper mapper, SistemaGestionDBcontext sistemaGestionDBcontext)
+        public UsuarioRepository(IGenericRepository<DetalleCliente> DetalleRepositorio, IGenericRepository<Tienda> TiendaRepositorio, IGenericRepository<Credito> CreditoRepositorio, IGenericRepository<Cliente> ClienteRepositorio, IGenericRepository<Usuario> usuarioRepositorio, IMapper mapper, SistemaGestionDBcontext sistemaGestionDBcontext)
         {
             _UsuarioRepositorio = usuarioRepositorio;
             _mapper = mapper;
             _context = sistemaGestionDBcontext;
-           
+            _ClienteRepositorio = ClienteRepositorio;
+            _DetalleRepositorio = DetalleRepositorio;
+            _CreditoRepositorio = CreditoRepositorio;
+            _TiendaRepositorio = TiendaRepositorio;
+
         }
 
         public async Task<List<UsuarioDTO>> listaUsuarios()
@@ -97,6 +105,41 @@ namespace GestionIntApi.Repositorios.Implementacion
                 modelo.Clave = hashedPassword;
 
                 var UsuarioCreado = await _UsuarioRepositorio.Crear(_mapper.Map<Usuario>(modelo));
+                
+                /////////////////////
+                
+                
+   
+                // 2. Guardar DetalleCliente
+                var detalle = await _DetalleRepositorio.Crear(
+                    _mapper.Map<DetalleCliente>(modelo.Cliente.DetalleCliente)
+                );
+
+                // 3. Guardar Cliente
+                var cliente = new Cliente
+                {
+                    UsuarioId = UsuarioCreado.Id,
+                    DetalleClienteID = detalle.Id
+                };
+
+                cliente = await _ClienteRepositorio.Crear(cliente);
+
+
+                // 4. Guardar tiendas
+                foreach (var t in modelo.Cliente.Tiendas)
+                {
+                    t.ClienteId = cliente.Id;
+                    await _TiendaRepositorio.Crear(_mapper.Map<Tienda>(t));
+                }
+
+                // 5. Guardar créditos
+                foreach (var c in modelo.Cliente.Creditos)
+                {
+                    c.ClienteId = cliente.Id;
+                    await _CreditoRepositorio.Crear(_mapper.Map<Credito>(c));
+                }
+
+                ////////
 
                 if (UsuarioCreado.Id == 0)
                     throw new TaskCanceledException("No se pudo Crear");

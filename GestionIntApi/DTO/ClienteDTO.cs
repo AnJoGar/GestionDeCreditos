@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
 
-        public int UsuarioId { get; set; }
-        public UsuarioDTO Usuario { get; set; }
+        public int? UsuarioId { get; set; }
+// public UsuarioDTO Usuario { get; set; }
 
         public int DetalleClienteID { get; set; }
         public DetalleClienteDTO DetalleCliente { get; set; }

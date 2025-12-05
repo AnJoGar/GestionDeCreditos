@@ -89,14 +89,63 @@ namespace GestionIntApi.Controllers
                 return StatusCode(500, "Error al obtener el Odontólogo por ID");
             }
         }
+        
+                [HttpPost]
+                [Route("Guardar")]
+                public async Task<IActionResult> Guardar([FromBody] UsuarioDTO usuario)
+                {
+                    var rsp = new Response<UsuarioDTO>();
+                    try
+                    {
+                        var existe = await _UsuarioServicios.ExisteCorreo(usuario.Correo);
+                        if (existe)
+                        {
+                            rsp.status = false;
+                            rsp.msg = "El correo ya está registrado.";
+                            return BadRequest(rsp);
+                        }
 
-        [HttpPost]
+                        //  var newUser = await _UsuarioServicios.crearUsuario(usuario);
+
+                        // 2. Generar Código
+                        var codigo = new Random().Next(100000, 999999).ToString();
+
+                        var datos = new RegistroTemporal
+                        {
+                            Usuario = usuario,
+                            Codigo = codigo
+                        };
+
+                        // 3. Guardar el código temporal asociado al correo del usuario
+                        //  _codigoService.GuardarCodigo(usuario.Correo, codigo);
+                        _registroTemporal.GuardarRegistro(usuario.Correo, datos);
+                        // 4. Enviar correo
+                        await _emailService.SendEmailAsync(
+                            usuario.Correo,
+                            "Código de verificación",
+                            $"<h3>Tu código es: <b>{codigo}</b></h3>"
+                        );
+                        rsp.status = true;
+                        rsp.msg = "Código enviado. Verifique su correo.";
+                       // rsp.value = await _UsuarioServicios.crearUsuario(usuario);
+                    }
+                    catch (Exception ex)
+                    {
+                        rsp.status = false;
+                        rsp.msg = ex.Message;
+                    }
+                    return Ok(rsp);
+                }
+        
+      /*  [HttpPost]
         [Route("Guardar")]
         public async Task<IActionResult> Guardar([FromBody] UsuarioDTO usuario)
         {
             var rsp = new Response<UsuarioDTO>();
+
             try
             {
+                // 1. Validar correo
                 var existe = await _UsuarioServicios.ExisteCorreo(usuario.Correo);
                 if (existe)
                 {
@@ -105,38 +154,23 @@ namespace GestionIntApi.Controllers
                     return BadRequest(rsp);
                 }
 
-                //  var newUser = await _UsuarioServicios.crearUsuario(usuario);
+                // 2. Registrar usuario directamente
+                var nuevoUsuario = await _UsuarioServicios.crearUsuario(usuario);
 
-                // 2. Generar Código
-                var codigo = new Random().Next(100000, 999999).ToString();
-
-                var datos = new RegistroTemporal
-                {
-                    Usuario = usuario,
-                    Codigo = codigo
-                };
-
-                // 3. Guardar el código temporal asociado al correo del usuario
-                //  _codigoService.GuardarCodigo(usuario.Correo, codigo);
-                _registroTemporal.GuardarRegistro(usuario.Correo, datos);
-                // 4. Enviar correo
-                await _emailService.SendEmailAsync(
-                    usuario.Correo,
-                    "Código de verificación",
-                    $"<h3>Tu código es: <b>{codigo}</b></h3>"
-                );
                 rsp.status = true;
-                rsp.msg = "Código enviado. Verifique su correo.";
-               // rsp.value = await _UsuarioServicios.crearUsuario(usuario);
+                rsp.msg = "Usuario registrado correctamente.";
+                rsp.value = nuevoUsuario;
             }
             catch (Exception ex)
             {
                 rsp.status = false;
                 rsp.msg = ex.Message;
             }
+
             return Ok(rsp);
         }
 
+        */
         [HttpPut]
         [Route("Editar")]
         public async Task<IActionResult> Editar([FromBody] UsuarioDTO Usuario)

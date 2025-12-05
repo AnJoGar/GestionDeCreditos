@@ -7,20 +7,64 @@
       "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\implementacion\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\implementacion\\creditoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\implementacion\\creditoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\contrato\\iclienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\contrato\\iclienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\contrato\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\contrato\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\dto\\creditodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\dto\\creditodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\dto\\clientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\dto\\clientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\models\\credito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\models\\credito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\interfaces\\inotificacionservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\interfaces\\inotificacionservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\implementacion\\creditoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\implementacion\\creditoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\interfaces\\iclienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\interfaces\\iclienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\controllers\\creditocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\controllers\\creditocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\implementacion\\notificacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\implementacion\\notificacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\implementacion\\registrotemporalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\implementacion\\registrotemporalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\implementacion\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\implementacion\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\models\\tienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,12 +75,72 @@
       "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\models\\detallecliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\dto\\clientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\dto\\clientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\contrato\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\contrato\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\dto\\reportedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\dto\\reportedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\contrato\\inotificacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\contrato\\inotificacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\dto\\notificaciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\dto\\notificaciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\models\\notificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\models\\notificacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\interfaces\\notificacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\interfaces\\notificacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\utilidades\\automapperperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\utilidades\\automapperperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\railway.toml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\railway.toml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\controllers\\detalleclientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\controllers\\detalleclientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\implementacion\\detalleclienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\implementacion\\detalleclienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\dto\\detalleclientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\dto\\detalleclientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\dto\\tiendadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\dto\\tiendadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\interfaces\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,12 +151,12 @@
       "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\interfaces\\icreditoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\implementacion\\tiendaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\implementacion\\tiendaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\repositorios\\interfaces\\genericrepositorycliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\repositorios\\interfaces\\genericrepositorycliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\dto\\tiendadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\dto\\tiendadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|c:\\users\\andjo\\videos\\trabajo\\apigestioninterna\\gestionintapi\\migrations\\20251204221311_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF9EC3F-F646-6177-ACE4-A36F8C531D7E}|GestionIntApi\\GestionIntApi.csproj|solutionrelative:gestionintapi\\migrations\\20251204221311_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,27 +170,26 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 32,
               "Title": "TiendaDTO.cs",
               "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\TiendaDTO.cs",
               "RelativeDocumentMoniker": "GestionIntApi\\DTO\\TiendaDTO.cs",
               "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\TiendaDTO.cs",
               "RelativeToolTip": "GestionIntApi\\DTO\\TiendaDTO.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAgwA8AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA1wA4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T17:49:33.883Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 16,
               "Title": "Tienda.cs",
               "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Models\\Tienda.cs",
               "RelativeDocumentMoniker": "GestionIntApi\\Models\\Tienda.cs",
               "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Models\\Tienda.cs",
               "RelativeToolTip": "GestionIntApi\\Models\\Tienda.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAA1wAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAkAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T17:15:13.158Z",
               "IsPinned": true,
@@ -94,42 +197,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TiendaService.cs",
-              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\TiendaService.cs",
-              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Implementacion\\TiendaService.cs",
-              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\TiendaService.cs",
-              "RelativeToolTip": "GestionIntApi\\Repositorios\\Implementacion\\TiendaService.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAcwGIAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T04:12:41.384Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreditoService.cs",
-              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\CreditoService.cs",
-              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Implementacion\\CreditoService.cs",
-              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\CreditoService.cs",
-              "RelativeToolTip": "GestionIntApi\\Repositorios\\Implementacion\\CreditoService.cs",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAAAE4AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T05:20:57.748Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CreditoDTO.cs",
               "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\CreditoDTO.cs",
               "RelativeDocumentMoniker": "GestionIntApi\\DTO\\CreditoDTO.cs",
               "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\CreditoDTO.cs",
               "RelativeToolTip": "GestionIntApi\\DTO\\CreditoDTO.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA9wAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA0wBIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T05:14:29.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Contrato\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Contrato\\IGenericRepository.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Contrato\\IGenericRepository.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Contrato\\IGenericRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwAsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T04:23:46.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IClienteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Contrato\\IClienteRepository.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Contrato\\IClienteRepository.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Contrato\\IClienteRepository.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Contrato\\IClienteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T18:01:24.99Z",
               "EditorCaption": ""
             },
             {
@@ -140,22 +242,9 @@
               "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Implementacion\\ClienteService.cs",
               "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\ClienteService.cs",
               "RelativeToolTip": "GestionIntApi\\Repositorios\\Implementacion\\ClienteService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwDQAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAALYAAAAAAAAAAAAUwMQAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T04:15:42.161Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ClienteDTO.cs",
-              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\ClienteDTO.cs",
-              "RelativeDocumentMoniker": "GestionIntApi\\DTO\\ClienteDTO.cs",
-              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\ClienteDTO.cs",
-              "RelativeToolTip": "GestionIntApi\\DTO\\ClienteDTO.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T05:13:38.335Z",
               "EditorCaption": ""
             },
             {
@@ -166,66 +255,398 @@
               "RelativeDocumentMoniker": "GestionIntApi\\Models\\Credito.cs",
               "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Models\\Credito.cs",
               "RelativeToolTip": "GestionIntApi\\Models\\Credito.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA0wBIAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T04:50:26.84Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Models\\Cliente.cs",
               "RelativeDocumentMoniker": "GestionIntApi\\Models\\Cliente.cs",
               "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Models\\Cliente.cs",
               "RelativeToolTip": "GestionIntApi\\Models\\Cliente.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAA1wA8AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA1wA8AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T04:24:53.127Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IGenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Contrato\\IGenericRepository.cs",
-              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Contrato\\IGenericRepository.cs",
-              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Contrato\\IGenericRepository.cs",
-              "RelativeToolTip": "GestionIntApi\\Repositorios\\Contrato\\IGenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Program.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Program.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Program.cs",
+              "RelativeToolTip": "GestionIntApi\\Program.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAUwDwAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T04:23:46.54Z",
+              "WhenOpened": "2025-12-05T04:54:33.044Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
+              "Title": "INotificacionServicio.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Interfaces\\INotificacionServicio.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Interfaces\\INotificacionServicio.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Interfaces\\INotificacionServicio.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Interfaces\\INotificacionServicio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T06:03:45.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreditoService.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\CreditoService.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Implementacion\\CreditoService.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\CreditoService.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Implementacion\\CreditoService.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAIwAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T20:31:46.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "GestionIntApi\\Controllers\\ClienteController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAADwvyEAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T05:12:29.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IClienteService.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Interfaces\\IClienteService.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Interfaces\\IClienteService.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Interfaces\\IClienteService.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Interfaces\\IClienteService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T17:00:55.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CreditoController.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Controllers\\CreditoController.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Controllers\\CreditoController.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Controllers\\CreditoController.cs",
+              "RelativeToolTip": "GestionIntApi\\Controllers\\CreditoController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwCMAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T04:39:03.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "GestionIntApi\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAqwF0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T19:28:33.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NotificacionService.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\NotificacionService.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Implementacion\\NotificacionService.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\NotificacionService.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Implementacion\\NotificacionService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T06:08:14.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RegistroTemporalService.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\RegistroTemporalService.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Implementacion\\RegistroTemporalService.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\RegistroTemporalService.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Implementacion\\RegistroTemporalService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T06:48:38.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Implementacion\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\UsuarioRepository.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Implementacion\\UsuarioRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAuwBcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T19:43:36.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "DetalleCliente.cs",
               "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Models\\DetalleCliente.cs",
               "RelativeDocumentMoniker": "GestionIntApi\\Models\\DetalleCliente.cs",
               "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Models\\DetalleCliente.cs",
               "RelativeToolTip": "GestionIntApi\\Models\\DetalleCliente.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAgwA0AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwA0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T03:46:06.183Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
+              "Title": "ClienteDTO.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\ClienteDTO.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\DTO\\ClienteDTO.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\ClienteDTO.cs",
+              "RelativeToolTip": "GestionIntApi\\DTO\\ClienteDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T05:07:15.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ReporteDTO.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\ReporteDTO.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\DTO\\ReporteDTO.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\ReporteDTO.cs",
+              "RelativeToolTip": "GestionIntApi\\DTO\\ReporteDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T06:21:38.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "INotificacionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Contrato\\INotificacionRepository.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Contrato\\INotificacionRepository.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Contrato\\INotificacionRepository.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Contrato\\INotificacionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T06:05:34.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Notificacion.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Models\\Notificacion.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Models\\Notificacion.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Models\\Notificacion.cs",
+              "RelativeToolTip": "GestionIntApi\\Models\\Notificacion.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBMAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T05:55:29.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "NotificacionDTO.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\NotificacionDTO.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\DTO\\NotificacionDTO.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\NotificacionDTO.cs",
+              "RelativeToolTip": "GestionIntApi\\DTO\\NotificacionDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T05:57:18.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "NotificacionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Interfaces\\NotificacionRepository.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Interfaces\\NotificacionRepository.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Interfaces\\NotificacionRepository.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Interfaces\\NotificacionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T06:07:03.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AutoMapperPerfil.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Utilidades\\AutoMapperPerfil.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Utilidades\\AutoMapperPerfil.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Utilidades\\AutoMapperPerfil.cs",
+              "RelativeToolTip": "GestionIntApi\\Utilidades\\AutoMapperPerfil.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAgwE4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T18:29:20.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Railway.toml",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Railway.toml",
+              "RelativeDocumentMoniker": "GestionIntApi\\Railway.toml",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Railway.toml",
+              "RelativeToolTip": "GestionIntApi\\Railway.toml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-05T05:44:27.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DetalleClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Controllers\\DetalleClienteController.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Controllers\\DetalleClienteController.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Controllers\\DetalleClienteController.cs",
+              "RelativeToolTip": "GestionIntApi\\Controllers\\DetalleClienteController.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAA4wHcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T05:00:41.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "TiendaController.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Controllers\\TiendaController.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Controllers\\TiendaController.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Controllers\\TiendaController.cs",
+              "RelativeToolTip": "GestionIntApi\\Controllers\\TiendaController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAHkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T05:19:45.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Models\\Usuario.cs",
+              "RelativeToolTip": "GestionIntApi\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA9wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T19:43:22.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "DetalleClienteService.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\DetalleClienteService.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Implementacion\\DetalleClienteService.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Implementacion\\DetalleClienteService.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Implementacion\\DetalleClienteService.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAcwGoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T21:48:55.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IUsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Interfaces\\IUsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Interfaces\\IUsuarioRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T02:48:57.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "DetalleClienteDTO.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\DetalleClienteDTO.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\DTO\\DetalleClienteDTO.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\DetalleClienteDTO.cs",
+              "RelativeToolTip": "GestionIntApi\\DTO\\DetalleClienteDTO.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA1wA0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T18:37:59.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "UsuarioDTO.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\UsuarioDTO.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\DTO\\UsuarioDTO.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\DTO\\UsuarioDTO.cs",
+              "RelativeToolTip": "GestionIntApi\\DTO\\UsuarioDTO.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA9wBgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T19:28:58.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "20251204221311_initial.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Migrations\\20251204221311_initial.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Migrations\\20251204221311_initial.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Migrations\\20251204221311_initial.cs",
+              "RelativeToolTip": "GestionIntApi\\Migrations\\20251204221311_initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T22:13:12.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\appsettings.json",
+              "RelativeDocumentMoniker": "GestionIntApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\appsettings.json",
+              "RelativeToolTip": "GestionIntApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-04T22:09:44.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
               "Title": "GenericRepository.cs",
               "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Interfaces\\GenericRepository.cs",
               "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Interfaces\\GenericRepository.cs",
               "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Interfaces\\GenericRepository.cs",
               "RelativeToolTip": "GestionIntApi\\Repositorios\\Interfaces\\GenericRepository.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBIAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowCsAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T04:22:59.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T04:22:59.815Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 36,
               "Title": "ICreditoService.cs",
               "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Interfaces\\ICreditoService.cs",
               "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Interfaces\\ICreditoService.cs",
@@ -233,8 +654,19 @@
               "RelativeToolTip": "GestionIntApi\\Repositorios\\Interfaces\\ICreditoService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T04:11:24.593Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T04:11:24.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "GenericRepositoryCliente.cs",
+              "DocumentMoniker": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Interfaces\\GenericRepositoryCliente.cs",
+              "RelativeDocumentMoniker": "GestionIntApi\\Repositorios\\Interfaces\\GenericRepositoryCliente.cs",
+              "ToolTip": "C:\\Users\\andjo\\Videos\\TRABAJO\\apiGestionInterna\\GestionIntApi\\Repositorios\\Interfaces\\GenericRepositoryCliente.cs",
+              "RelativeToolTip": "GestionIntApi\\Repositorios\\Interfaces\\GenericRepositoryCliente.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAIA0wCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T17:18:08.264Z"
             }
           ]
         }

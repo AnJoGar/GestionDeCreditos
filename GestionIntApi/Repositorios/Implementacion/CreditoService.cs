@@ -69,6 +69,24 @@ namespace GestionIntApi.Repositorios.Implementacion
         {
             try
             {
+                // Cálculo del TotalPagar (sin intereses)
+                modelo.TotalPagar = modelo.Monto;
+
+                // Cálculo de ValorPorCuota
+                modelo.ValorPorCuota = modelo.TotalPagar / modelo.PlazoCuotas;
+
+                // Cálculo de PróximaCuota según frecuencia
+                modelo.ProximaCuota = modelo.FrecuenciaPago.ToLower() switch
+                {
+                    "semanal" => modelo.DiaPago.AddDays(7),
+                    "quincenal" => modelo.DiaPago.AddDays(15),
+                    "mensual" => modelo.DiaPago.AddMonths(1),
+                    _ => modelo.DiaPago
+                };
+
+
+
+
                 var UsuarioCreado = await _creditoRepository.Crear(_mapper.Map<Credito>(modelo));
 
                 if (UsuarioCreado.Id == 0)
@@ -93,6 +111,19 @@ namespace GestionIntApi.Repositorios.Implementacion
                 var TiendaEncontrado = await _creditoRepository.Obtener(u => u.Id == TiendaModelo.Id);
                 if (TiendaEncontrado == null)
                     throw new TaskCanceledException("El credito no existe");
+
+                // Recalcular todo antes de actualizar
+                modelo.TotalPagar = modelo.Monto;
+                modelo.ValorPorCuota = modelo.TotalPagar / modelo.PlazoCuotas;
+
+                modelo.ProximaCuota = modelo.FrecuenciaPago.ToLower() switch
+                {
+                    "semanal" => modelo.DiaPago.AddDays(7),
+                    "quincenal" => modelo.DiaPago.AddDays(15),
+                    "mensual" => modelo.DiaPago.AddMonths(1),
+                    _ => modelo.DiaPago
+                };
+
                 TiendaEncontrado.Monto = TiendaModelo.Monto;
                 TiendaEncontrado.PlazoCuotas = TiendaModelo.PlazoCuotas;
                 TiendaEncontrado.FrecuenciaPago = TiendaModelo.FrecuenciaPago;

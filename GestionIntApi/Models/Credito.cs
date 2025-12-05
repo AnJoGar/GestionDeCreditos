@@ -14,7 +14,13 @@
         public decimal TotalPagar { get; set; }
         public DateTime ProximaCuota { get; set; }
 
+        public string Estado { get; set; }
 
-        public ICollection<Cliente> Clientes { get; set; }
+        //public DateTime FechaCreacion { get; set; }
+
+        // FK a Cliente
+        public int ClienteId { get; set; }
+        public Cliente Cliente { get; set; }
+        // public ICollection<Cliente> Clientes { get; set; }
     }
 }

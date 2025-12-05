@@ -20,6 +20,7 @@ namespace GestionIntApi.Utilidades
 
             #region Usuario
             CreateMap<Usuario, UsuarioDTO>()
+                 .ForMember(dest => dest.Cliente, opt => opt.Ignore())
                 .ForMember(destino =>
                     destino.RolDescripcion,
                     opt => opt.MapFrom(origen => origen.Rol.Descripcion)
@@ -38,7 +39,7 @@ namespace GestionIntApi.Utilidades
                 );
 
             CreateMap<UsuarioDTO, Usuario>()
-
+                  .ForMember(dest => dest.Cliente, opt => opt.Ignore())
                  .ForMember(destino =>
                     destino.Rol,
                     opt => opt.Ignore()
@@ -49,20 +50,40 @@ namespace GestionIntApi.Utilidades
                    );
 
             #endregion Usuario
+            #region DetalleCliente
+            CreateMap<DetalleCliente, DetalleClienteDTO>().ReverseMap();
+            CreateMap<ClienteDTO, Cliente>()
+    .ForMember(dest => dest.Usuario, opt => opt.Ignore())
+    .ReverseMap();
 
-       
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+            #endregion DetalleCliente
+            #region Credito
+            CreateMap<Credito, CreditoDTO>()
+                .ForMember(dest => dest.ProximaCuotaStr,
+               opt => opt.MapFrom(src => src.ProximaCuota.ToString("dd/MM/yyyy")));
+            CreateMap<CreditoDTO, Credito>()
+    .ForMember(dest => dest.ProximaCuota, opt => opt.Ignore()); //
+
+            #endregion Credito
+            #region Tienda
+            CreateMap<Tienda, TiendaDTO>().ReverseMap();
+
+
+            #endregion Tienda
+
+
+            #region Notificacion
+
+            CreateMap<Notificacion, NotificacionDTO>().ReverseMap();
+            #endregion Notificacion
+
+
+
+
+
+
+
         }
 
 

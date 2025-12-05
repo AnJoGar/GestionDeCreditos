@@ -95,9 +95,8 @@ namespace GestionIntApi.Repositorios.Implementacion
                 TiendaEncontrado.NombreEncargado = TiendaModelo.NombreEncargado;
                  TiendaEncontrado.Telefono = TiendaModelo.Telefono;
                 TiendaEncontrado.Direccion = TiendaModelo.Direccion;
-                TiendaEncontrado.CodigoTienda = TiendaModelo.CodigoTienda;
-               
-                TiendaEncontrado.LogoUrl = TiendaModelo.LogoUrl;
+
+
 
                 bool respuesta = await _tiendaRepository.Editar(TiendaEncontrado);
                 return respuesta;

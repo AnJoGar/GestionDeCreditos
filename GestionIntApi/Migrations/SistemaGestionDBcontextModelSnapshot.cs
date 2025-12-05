@@ -22,36 +22,6 @@ namespace GestionIntApi.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ClienteCredito", b =>
-                {
-                    b.Property<int>("ClientesId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("CreditosId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ClientesId", "CreditosId");
-
-                    b.HasIndex("CreditosId");
-
-                    b.ToTable("ClienteCredito");
-                });
-
-            modelBuilder.Entity("ClienteTienda", b =>
-                {
-                    b.Property<int>("ClientesId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TiendasId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ClientesId", "TiendasId");
-
-                    b.HasIndex("TiendasId");
-
-                    b.ToTable("ClienteTienda");
-                });
-
             modelBuilder.Entity("GestionIntApi.Models.Cliente", b =>
                 {
                     b.Property<int>("Id")
@@ -85,8 +55,15 @@ namespace GestionIntApi.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("DiaPago")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("FrecuenciaPago")
                         .IsRequired()
@@ -109,6 +86,8 @@ namespace GestionIntApi.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ClienteId");
+
                     b.ToTable("Creditos");
                 });
 
@@ -125,9 +104,15 @@ namespace GestionIntApi.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("FotoCelularEntregadoUrl")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("FotoClienteUrl")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("FotoContrato")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("NombreApellidos")
@@ -247,9 +232,8 @@ namespace GestionIntApi.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CodigoTienda")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Direccion")
                         .IsRequired()
@@ -257,9 +241,6 @@ namespace GestionIntApi.Migrations
 
                     b.Property<DateTime>("FechaRegistro")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("LogoUrl")
-                        .HasColumnType("text");
 
                     b.Property<string>("NombreEncargado")
                         .IsRequired()
@@ -274,6 +255,8 @@ namespace GestionIntApi.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ClienteId");
 
                     b.ToTable("Tiendas");
                 });
@@ -341,36 +324,6 @@ namespace GestionIntApi.Migrations
                     b.ToTable("VerificationCode");
                 });
 
-            modelBuilder.Entity("ClienteCredito", b =>
-                {
-                    b.HasOne("GestionIntApi.Models.Cliente", null)
-                        .WithMany()
-                        .HasForeignKey("ClientesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GestionIntApi.Models.Credito", null)
-                        .WithMany()
-                        .HasForeignKey("CreditosId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("ClienteTienda", b =>
-                {
-                    b.HasOne("GestionIntApi.Models.Cliente", null)
-                        .WithMany()
-                        .HasForeignKey("ClientesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GestionIntApi.Models.Tienda", null)
-                        .WithMany()
-                        .HasForeignKey("TiendasId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("GestionIntApi.Models.Cliente", b =>
                 {
                     b.HasOne("GestionIntApi.Models.DetalleCliente", "DetalleCliente")
@@ -390,6 +343,17 @@ namespace GestionIntApi.Migrations
                     b.Navigation("Usuario");
                 });
 
+            modelBuilder.Entity("GestionIntApi.Models.Credito", b =>
+                {
+                    b.HasOne("GestionIntApi.Models.Cliente", "Cliente")
+                        .WithMany("Creditos")
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
+                });
+
             modelBuilder.Entity("GestionIntApi.Models.MenuRol", b =>
                 {
                     b.HasOne("GestionIntApi.Models.Menu", "Menu")
@@ -405,6 +369,17 @@ namespace GestionIntApi.Migrations
                     b.Navigation("Rol");
                 });
 
+            modelBuilder.Entity("GestionIntApi.Models.Tienda", b =>
+                {
+                    b.HasOne("GestionIntApi.Models.Cliente", "Cliente")
+                        .WithMany("Tiendas")
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
+                });
+
             modelBuilder.Entity("GestionIntApi.Models.Usuario", b =>
                 {
                     b.HasOne("GestionIntApi.Models.Rol", "Rol")
@@ -412,6 +387,13 @@ namespace GestionIntApi.Migrations
                         .HasForeignKey("RolId");
 
                     b.Navigation("Rol");
+                });
+
+            modelBuilder.Entity("GestionIntApi.Models.Cliente", b =>
+                {
+                    b.Navigation("Creditos");
+
+                    b.Navigation("Tiendas");
                 });
 
             modelBuilder.Entity("GestionIntApi.Models.DetalleCliente", b =>

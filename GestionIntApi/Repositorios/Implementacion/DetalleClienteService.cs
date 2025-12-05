@@ -97,6 +97,7 @@ namespace GestionIntApi.Repositorios.Implementacion
                 
                 detalleClienteEncontrado.FotoClienteUrl = DetlleModelo.FotoClienteUrl;
                 detalleClienteEncontrado.FotoCelularEntregadoUrl = DetlleModelo.FotoCelularEntregadoUrl;
+                detalleClienteEncontrado.FotoContrato = DetlleModelo.FotoContrato;
                 bool respuesta = await _DetalleRepositorio.Editar(detalleClienteEncontrado);
                 return respuesta;
             }
