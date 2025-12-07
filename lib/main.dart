@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        title: 'App Gestión',
+        title: 'CellCompay',
         theme: AppTheme().getTheme(),
         routerConfig: appRouter,
       ),

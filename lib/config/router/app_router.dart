@@ -8,7 +8,7 @@ import '../../presentation/screens/reset_password_screen.dart';
 import '../../presentation/screens/home_screen.dart';
 
 final appRouter = GoRouter(
-  initialLocation: '/',
+  initialLocation: '/login',
   routes: [
     GoRoute(
       path: '/',
