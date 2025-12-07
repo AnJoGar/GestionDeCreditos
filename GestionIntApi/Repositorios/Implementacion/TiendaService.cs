@@ -48,7 +48,7 @@ namespace GestionIntApi.Repositorios.Implementacion
         {
             try
             {
-                var detalleEncontrado = await _tiendaRepository.Obtenerid(u => u.Id == id);
+                var detalleEncontrado = await _tiendaRepository.Obtener(u => u.Id == id);
 
 
                 if (detalleEncontrado == null)

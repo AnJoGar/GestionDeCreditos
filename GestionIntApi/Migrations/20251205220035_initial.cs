@@ -146,7 +146,7 @@ namespace GestionIntApi.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    UsuarioId = table.Column<int>(type: "integer", nullable: false),
+                    UsuarioId = table.Column<int>(type: "integer", nullable: true),
                     DetalleClienteID = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
@@ -162,8 +162,7 @@ namespace GestionIntApi.Migrations
                         name: "FK_Clientes_Usuarios_UsuarioId",
                         column: x => x.UsuarioId,
                         principalTable: "Usuarios",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -172,7 +171,9 @@ namespace GestionIntApi.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Monto = table.Column<decimal>(type: "numeric", nullable: false),
+                    MontoTotal = table.Column<decimal>(type: "numeric", nullable: false),
+                    MontoPendiente = table.Column<decimal>(type: "numeric", nullable: false),
+                    Entrada = table.Column<decimal>(type: "numeric", nullable: false),
                     PlazoCuotas = table.Column<int>(type: "integer", nullable: false),
                     FrecuenciaPago = table.Column<string>(type: "text", nullable: false),
                     DiaPago = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
@@ -180,6 +181,7 @@ namespace GestionIntApi.Migrations
                     TotalPagar = table.Column<decimal>(type: "numeric", nullable: false),
                     ProximaCuota = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Estado = table.Column<string>(type: "text", nullable: false),
+                    FechaCreacion = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     ClienteId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
@@ -187,6 +189,29 @@ namespace GestionIntApi.Migrations
                     table.PrimaryKey("PK_Creditos", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Creditos_Clientes_ClienteId",
+                        column: x => x.ClienteId,
+                        principalTable: "Clientes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Notificacions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    ClienteId = table.Column<int>(type: "integer", nullable: false),
+                    Tipo = table.Column<string>(type: "text", nullable: false),
+                    Mensaje = table.Column<string>(type: "text", nullable: false),
+                    Fecha = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    Leida = table.Column<bool>(type: "boolean", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Notificacions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Notificacions_Clientes_ClienteId",
                         column: x => x.ClienteId,
                         principalTable: "Clientes",
                         principalColumn: "Id",
@@ -245,6 +270,11 @@ namespace GestionIntApi.Migrations
                 column: "RolId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Notificacions_ClienteId",
+                table: "Notificacions",
+                column: "ClienteId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Tiendas_ClienteId",
                 table: "Tiendas",
                 column: "ClienteId");
@@ -266,6 +296,9 @@ namespace GestionIntApi.Migrations
 
             migrationBuilder.DropTable(
                 name: "MenuRols");
+
+            migrationBuilder.DropTable(
+                name: "Notificacions");
 
             migrationBuilder.DropTable(
                 name: "Tiendas");

@@ -59,6 +59,23 @@ namespace GestionIntApi.Controllers
             }
         }
 
+
+        [HttpGet("pendientes/{Id}")]
+        public async Task<ActionResult<CreditoDTO>> GetByIdCreditoActivo(int id)
+        {
+            try
+            {
+                var credito = await _CreditoServicios.GetCreditosPendientesPorCliente(id);
+                if (credito == null)
+                    return NotFound();
+                return Ok(credito);
+            }
+            catch
+            {
+                return StatusCode(500, "Error al obtener el credito por ID");
+            }
+        }
+
         [HttpPost]
         [Route("Guardar")]
         public async Task<IActionResult> Guardar([FromBody] CreditoDTO credito)
@@ -71,6 +88,34 @@ namespace GestionIntApi.Controllers
 
                 // 2. Registrar usuario directamente
                 var nuevoCredito = await _CreditoServicios.CreateCredito(credito);
+
+                rsp.status = true;
+                rsp.msg = "Usuario registrado correctamente.";
+                rsp.value = nuevoCredito;
+            }
+            catch (Exception ex)
+            {
+                rsp.status = false;
+                rsp.msg = ex.Message;
+            }
+
+            return Ok(rsp);
+        }
+
+
+
+        [HttpPost]
+        [Route("RegistrarPago")]
+        public async Task<IActionResult> GuardarPago([FromBody] PagoCreditoDTO credito)
+        {
+            var rsp = new Response<CreditoDTO>();
+
+            try
+            {
+                // 1. Validar correo
+
+                // 2. Registrar usuario directamente
+                var nuevoCredito = await _CreditoServicios.RegistrarPagoAsync(credito);
 
                 rsp.status = true;
                 rsp.msg = "Usuario registrado correctamente.";

@@ -63,7 +63,7 @@ namespace GestionIntApi.Utilidades
                 .ForMember(dest => dest.ProximaCuotaStr,
                opt => opt.MapFrom(src => src.ProximaCuota.ToString("dd/MM/yyyy")));
             CreateMap<CreditoDTO, Credito>()
-    .ForMember(dest => dest.ProximaCuota, opt => opt.Ignore()); //
+    .ForMember(dest => dest.ProximaCuota, opt => opt.MapFrom(src => src.ProximaCuota));
 
             #endregion Credito
             #region Tienda

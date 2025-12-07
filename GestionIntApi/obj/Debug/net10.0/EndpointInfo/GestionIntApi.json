@@ -128,6 +128,46 @@
         }
       }
     },
+    "/api/Credito/pendientes/{Id}": {
+      "get": {
+        "tags": [
+          "Credito"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreditoDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreditoDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreditoDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Credito/Guardar": {
       "post": {
         "tags": [
@@ -148,6 +188,37 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/CreditoDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Credito/RegistrarPago": {
+      "post": {
+        "tags": [
+          "Credito"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagoCreditoDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagoCreditoDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagoCreditoDTO"
               }
             }
           }
@@ -408,6 +479,112 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Notificacion/Generar": {
+      "post": {
+        "tags": [
+          "Notificacion"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Notificacion/GetAll": {
+      "get": {
+        "tags": [
+          "Notificacion"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NotificacionDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NotificacionDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NotificacionDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Notificacion/{id}": {
+      "get": {
+        "tags": [
+          "Notificacion"
+        ],
+        "parameters": [
+          {
+            "name": "clienteId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NotificacionDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NotificacionDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NotificacionDTO"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -864,7 +1041,15 @@
             "type": "integer",
             "format": "int32"
           },
-          "monto": {
+          "entrada": {
+            "type": "number",
+            "format": "double"
+          },
+          "montoTotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "montoPendiente": {
             "type": "number",
             "format": "double"
           },
@@ -884,10 +1069,6 @@
             "type": "number",
             "format": "double"
           },
-          "totalPagar": {
-            "type": "number",
-            "format": "double"
-          },
           "proximaCuota": {
             "type": "string",
             "format": "date-time"
@@ -899,6 +1080,10 @@
           "estado": {
             "type": "string",
             "nullable": true
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time"
           },
           "clienteId": {
             "type": "integer",
@@ -965,6 +1150,49 @@
           "clave": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NotificacionDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "mensaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "leida": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagoCreditoDTO": {
+        "type": "object",
+        "properties": {
+          "creditoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "montoPagado": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false
@@ -1121,6 +1349,9 @@
     },
     {
       "name": "EmailValidation"
+    },
+    {
+      "name": "Notificacion"
     },
     {
       "name": "Password"

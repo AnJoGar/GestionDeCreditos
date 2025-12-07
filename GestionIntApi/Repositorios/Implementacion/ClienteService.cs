@@ -20,8 +20,8 @@ namespace GestionIntApi.Repositorios.Implementacion
         private readonly IGenericRepository<DetalleCliente> _DetalleRepositorio;
         private readonly IGenericRepository<Credito> _CreditoRepositorio;
         private readonly IGenericRepository<Tienda> _TiendaRepositorio;
-
-        public ClienteService(IGenericRepository<DetalleCliente> DetalleRepositorio, IGenericRepository<Tienda> TiendaRepositorio, 
+        private readonly ICreditoService _CreditoServicio;
+        public ClienteService(ICreditoService CreditoServicio,IGenericRepository<DetalleCliente> DetalleRepositorio, IGenericRepository<Tienda> TiendaRepositorio, 
             IGenericRepository<Credito> CreditoRepositorio, IClienteRepository clienteRepository,
             IGenericRepository<Cliente> clienteRepository2, SistemaGestionDBcontext context, IMapper mapper)
         {
@@ -32,6 +32,7 @@ namespace GestionIntApi.Repositorios.Implementacion
             _DetalleRepositorio = DetalleRepositorio;
             _CreditoRepositorio = CreditoRepositorio;
             _TiendaRepositorio = TiendaRepositorio;
+            _CreditoServicio=CreditoServicio;
         }
         public async Task<List<ClienteDTO>> GetClientes()
         {
@@ -99,7 +100,9 @@ namespace GestionIntApi.Repositorios.Implementacion
                     foreach (var c in modelo.Creditos)
                     {
                         c.ClienteId = cliente.Id;
-                        await _CreditoRepositorio.Crear(_mapper.Map<Credito>(c));
+
+                        // 🚀 Aquí se hace todo: validaciones, cálculos y guardado
+                        await _CreditoServicio.CreateCredito(c);
                     }
                 }
 
@@ -126,7 +129,32 @@ namespace GestionIntApi.Repositorios.Implementacion
                     throw new TaskCanceledException("La cita no existe");
                 OdontologoEncontrado.DetalleCliente = clienteModelo.DetalleCliente;
                 OdontologoEncontrado.Tiendas = clienteModelo.Tiendas;
-                OdontologoEncontrado.Creditos = clienteModelo.Creditos;
+                var creditosExistentes = OdontologoEncontrado.Creditos.ToList();
+                var creditosNuevos = clienteModelo.Creditos ?? new List<Credito>();
+
+                foreach (var c in creditosNuevos)
+                {
+                    c.ClienteId = OdontologoEncontrado.Id;
+
+                    if (c.Id == 0)
+                    {
+                        await _CreditoServicio.CreateCredito(_mapper.Map<CreditoDTO>(c));
+                    }
+                    else
+                    {
+                        await _CreditoServicio.UpdateCredito(_mapper.Map<CreditoDTO>(c));
+                    }
+                }
+
+                var idsEnviados = creditosNuevos.Select(x => x.Id).ToList();
+                var creditosAEliminar = creditosExistentes.Where(x => !idsEnviados.Contains(x.Id));
+
+                foreach (var credito in creditosAEliminar)
+                {
+                    await _CreditoServicio.DeleteCredito(credito.Id);
+                }
+
+
                 bool respuesta = await _clienteRepository.Editar(OdontologoEncontrado);
                 return respuesta;
             }
@@ -207,5 +235,13 @@ namespace GestionIntApi.Repositorios.Implementacion
 
 
 
-    }
+
+
+      
+
+
+
+
+
+}
 }

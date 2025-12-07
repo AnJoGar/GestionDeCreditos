@@ -10,5 +10,9 @@ namespace GestionIntApi.Repositorios.Interfaces
         Task<bool> UpdateCredito(CreditoDTO tiendaDto);
         Task<bool> DeleteCredito(int id);
 
+        Task<CreditoDTO> RegistrarPagoAsync(PagoCreditoDTO pago);
+
+        Task<List<CreditoDTO>> GetCreditosPendientesPorCliente(int clienteId);
+
     }
 }

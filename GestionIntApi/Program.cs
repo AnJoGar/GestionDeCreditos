@@ -60,6 +60,10 @@ builder.Services.AddScoped<IClienteService, ClienteService>();
 builder.Services.AddScoped<IDetalleClienteService, DetalleClienteService>();
 builder.Services.AddScoped<IClienteRepository, GenericRepositoryCliente>();
 builder.Services.AddScoped<ITiendaService, TiendaService>();
+
+builder.Services.AddScoped<INotificacionServicio,NotificacionService>();
+
+builder.Services.AddScoped<INotificacionRepository, NotificacionRepository>();
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());

@@ -8,7 +8,7 @@ namespace GestionIntApi.Repositorios.Implementacion
 {
     
 
-    public class NotificacionService
+    public class NotificacionService: INotificacionServicio
     {
 
         private readonly IGenericRepository<Credito> _CreditoRepositorio;
@@ -56,14 +56,14 @@ namespace GestionIntApi.Repositorios.Implementacion
             }
         }
 
-        private async Task CrearNotificacion(int clienteId, string tipo, string mensaje)
+        public async Task CrearNotificacion(int clienteId, string tipo, string mensaje)
         {
             var notificacion = new Notificacion
             {
                 ClienteId = clienteId,
                 Mensaje = mensaje,
                 Tipo = tipo,
-                Fecha = DateTime.Now
+                Fecha = DateTime.UtcNow
             };
 
             await _notificacionRepository.Crear(notificacion);

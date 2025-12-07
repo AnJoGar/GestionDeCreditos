@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GestionIntApi.Migrations
 {
     [DbContext(typeof(SistemaGestionDBcontext))]
-    [Migration("20251204221311_initial")]
+    [Migration("20251205220035_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -36,7 +36,7 @@ namespace GestionIntApi.Migrations
                     b.Property<int>("DetalleClienteID")
                         .HasColumnType("integer");
 
-                    b.Property<int>("UsuarioId")
+                    b.Property<int?>("UsuarioId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
@@ -64,15 +64,24 @@ namespace GestionIntApi.Migrations
                     b.Property<DateTime>("DiaPago")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<decimal>("Entrada")
+                        .HasColumnType("numeric");
+
                     b.Property<string>("Estado")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("FechaCreacion")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("FrecuenciaPago")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<decimal>("Monto")
+                    b.Property<decimal>("MontoPendiente")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("MontoTotal")
                         .HasColumnType("numeric");
 
                     b.Property<int>("PlazoCuotas")
@@ -208,6 +217,38 @@ namespace GestionIntApi.Migrations
                     b.ToTable("MenuRols");
                 });
 
+            modelBuilder.Entity("GestionIntApi.Models.Notificacion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("Leida")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Mensaje")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Tipo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClienteId");
+
+                    b.ToTable("Notificacions");
+                });
+
             modelBuilder.Entity("GestionIntApi.Models.Rol", b =>
                 {
                     b.Property<int>("Id")
@@ -337,9 +378,7 @@ namespace GestionIntApi.Migrations
 
                     b.HasOne("GestionIntApi.Models.Usuario", "Usuario")
                         .WithOne("Cliente")
-                        .HasForeignKey("GestionIntApi.Models.Cliente", "UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GestionIntApi.Models.Cliente", "UsuarioId");
 
                     b.Navigation("DetalleCliente");
 
@@ -370,6 +409,17 @@ namespace GestionIntApi.Migrations
                     b.Navigation("Menu");
 
                     b.Navigation("Rol");
+                });
+
+            modelBuilder.Entity("GestionIntApi.Models.Notificacion", b =>
+                {
+                    b.HasOne("GestionIntApi.Models.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
                 });
 
             modelBuilder.Entity("GestionIntApi.Models.Tienda", b =>
