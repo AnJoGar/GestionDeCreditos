@@ -16,7 +16,9 @@ class CreditSummaryCard extends StatelessWidget {
     // Cálculo visual de progreso (Simulado, ya que la API nos daría el saldo real)
     // Asumimos que si es nuevo, el progreso es 0.
     double progreso = 0.1;
-
+    final proximaCuotaStr = credito.proximaCuota != null
+        ? dateFormat.format(credito.proximaCuota!)
+        : 'No definido';
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
       width: double.infinity,
@@ -67,7 +69,7 @@ class CreditSummaryCard extends StatelessWidget {
             ),
             const SizedBox(height: 5),
             Text(
-              'Vence el: ${dateFormat.format(credito.proximaCuota)}',
+              'Vence el: $proximaCuotaStr',
               style: const TextStyle(color: Colors.white, fontSize: 14),
             ),
             const SizedBox(height: 20),
@@ -76,7 +78,7 @@ class CreditSummaryCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Total: ${currencyFormat.format(credito.totalPagar)}', style: const TextStyle(color: Colors.white70, fontSize: 12)),
+                Text('Total: ${currencyFormat.format(credito.montoPendiente)}', style: const TextStyle(color: Colors.white70, fontSize: 12)),
                 const Text('Progreso de pago', style: TextStyle(color: Colors.white70, fontSize: 12)),
               ],
             ),

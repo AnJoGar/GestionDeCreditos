@@ -19,14 +19,29 @@ class DetalleClienteDTO {
     this.fotoCelularEntregadoUrl,
   });
 
+ // ------------------- FROM JSON -------------------
+  factory DetalleClienteDTO.fromJson(Map<String, dynamic> json) {
+    return DetalleClienteDTO(
+      id: json['Id'] ?? 0,
+      numeroCedula: json['NumeroCedula'] ?? '',
+      nombreApellidos: json['NombreApellidos'] ?? '',
+      telefono: json['Telefono'] ?? '',
+      direccion: json['Direccion'] ?? '',
+      fotoClienteUrl: json['FotoClienteUrl'],
+      fotoContrato: json['FotoContrato'],
+      fotoCelularEntregadoUrl: json['FotoCelularEntregadoUrl'],
+    );
+  }
+
+  // ------------------- TO JSON -------------------
   Map<String, dynamic> toJson() => {
-    'Id': id,
-    'NumeroCedula': numeroCedula,
-    'NombreApellidos': nombreApellidos,
-    'Telefono': telefono,
-    'Direccion': direccion,
-    'FotoClienteUrl': fotoClienteUrl,
-    'FotoContrato': fotoContrato,
-    'FotoCelularEntregadoUrl': fotoCelularEntregadoUrl,
-  };
+        'Id': id,
+        'NumeroCedula': numeroCedula,
+        'NombreApellidos': nombreApellidos,
+        'Telefono': telefono,
+        'Direccion': direccion,
+        'FotoClienteUrl': fotoClienteUrl,
+        'FotoContrato': fotoContrato,
+        'FotoCelularEntregadoUrl': fotoCelularEntregadoUrl,
+      };
 }

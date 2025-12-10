@@ -5,7 +5,9 @@ import 'package:image_picker/image_picker.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:provider/provider.dart';
 import '../../providers/register_provider.dart';
+
 import '../widgets/custom_text_field.dart';
+import '../../services/UsuarioRegistroData.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -15,6 +17,8 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+
+  UsuarioRegistroData registroData = UsuarioRegistroData();
   File? _selectedImage;
   final ImagePicker _picker = ImagePicker();
   final _formKey = GlobalKey<FormState>();
@@ -30,7 +34,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _passController.dispose();
     super.dispose();
   }
-
+/*
   Future<void> _pickImage(ImageSource source) async {
     final XFile? pickedFile = await _picker.pickImage(source: source);
     if (pickedFile != null) {
@@ -61,7 +65,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
     );
-  }
+  }*/
 
   void _onNextPressed() {
     if (!_formKey.currentState!.validate()) return;
@@ -73,18 +77,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
       return;
     }
 
+
+  // Guardar datos del usuario en registroData
+  registroData.nombreApellidos = _nameController.text;
+  registroData.correo = _emailController.text;
+  registroData.clave = _passController.text;
+  registroData.rolId = 2; // ejemplo
+
+   // Obtener correo desde RegistroData
+
+
+  // Navegar a la siguiente pantalla
+  Navigator.pushNamed(context, '/client-data');
     // --- CAMBIO AQUÍ: Usamos el nuevo método del Provider ---
-    context.read<RegisterProvider>().setUsuarioBasico(
-        _nameController.text,
-        _emailController.text,
-        _passController.text
-    );
-
-    // NOTA: La foto de perfil del usuario (_selectedImage) deberíamos guardarla también.
-    // Como tu UsuarioDTO no tiene campo de foto explícito en el JSON principal (solo en DetalleCliente),
-    // asumiremos que esta foto es visual o se manejará luego.
-
-    context.push('/client-data');
+    
   }
 
   @override
@@ -132,7 +138,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Column(
                   children: [
                     // ... (El código de la foto se mantiene igual que antes) ...
-                    Center(
+/*                    Center(
                       child: Stack(
                         children: [
                           Container(
@@ -159,7 +165,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 30),*/
 
                     CustomTextField(
                       label: 'Nombre y Apellidos', icon: Icons.person_outline, controller: _nameController,

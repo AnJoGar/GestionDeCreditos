@@ -5,8 +5,11 @@ import 'package:provider/provider.dart';
 import '../../providers/register_provider.dart';
 import '../../models/tienda_crear_dto.dart'; // <--- IMPORT DTO
 import '../widgets/custom_text_field.dart';
-import '../widgets/photo_upload_card.dart'; // <--- Para el logo
+import '../widgets/photo_upload_card.dart'; 
+import '../../services/UsuarioRegistroData.dart';// <--- Para el logo
+import '../../models/cliente_dto.dart';
 
+import '../../models/tienda_dto.dart';
 class StoreDataScreen extends StatefulWidget {
   const StoreDataScreen({super.key});
 
@@ -16,6 +19,7 @@ class StoreDataScreen extends StatefulWidget {
 
 class _StoreDataScreenState extends State<StoreDataScreen> {
   final _formKey = GlobalKey<FormState>();
+   UsuarioRegistroData registroData = UsuarioRegistroData();
 
   final _nombreTiendaCtrl = TextEditingController();
   final _encargadoCtrl = TextEditingController();
@@ -43,17 +47,21 @@ class _StoreDataScreenState extends State<StoreDataScreen> {
     if (!_formKey.currentState!.validate()) return;
 
     // --- CAMBIO AQUÍ: Usamos TiendaCrearDTO ---
-    final tienda = TiendaCrearDTO(
+    final  tienda = TiendaDTO(
       nombreTienda: _nombreTiendaCtrl.text,
       nombreEncargado: _encargadoCtrl.text,
       telefono: _telefonoCtrl.text,
       direccion: _direccionCtrl.text,
-      codigoTienda: _codigoTiendaCtrl.text, // Campo nuevo
-      // Pasamos path. La conversión a Base64 se hará al enviar.
-      logoBase64: _logoTienda?.path,
-    );
+// Campo nuevo
+     
 
-    context.read<RegisterProvider>().setTienda(tienda);
+    );
+    final List<TiendaDTO> listaTienda = [tienda];
+  registroData.cliente ??= ClienteDTO(); // Crear cliente si no existe
+registroData.cliente!.tiendas = [];
+registroData.cliente!.tiendas!.add(tienda);
+
+  //  context.read<RegisterProvider>().setTienda(tienda);
     context.push('/credit-data');
   }
 

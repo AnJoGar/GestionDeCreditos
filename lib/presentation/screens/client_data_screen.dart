@@ -6,6 +6,9 @@ import '../../providers/register_provider.dart';
 import '../../models/detalle_cliente_dto.dart'; // <--- IMPORT DTO
 import '../widgets/custom_text_field.dart';
 import '../widgets/photo_upload_card.dart';
+import '../../services/UsuarioRegistroData.dart';
+
+import '../../models/cliente_dto.dart';
 
 class ClientDataScreen extends StatefulWidget {
   const ClientDataScreen({super.key});
@@ -15,6 +18,8 @@ class ClientDataScreen extends StatefulWidget {
 }
 
 class _ClientDataScreenState extends State<ClientDataScreen> {
+
+    UsuarioRegistroData registroData = UsuarioRegistroData();
   final _formKey = GlobalKey<FormState>();
   final _cedulaCtrl = TextEditingController();
   final _nombreCtrl = TextEditingController();
@@ -54,21 +59,25 @@ class _ClientDataScreenState extends State<ClientDataScreen> {
       );
       return;
     }
+final detalle = DetalleClienteDTO(
+  numeroCedula: _cedulaCtrl.text,
+  nombreApellidos: _nombreCtrl.text,
+  telefono: _telefonoCtrl.text,
+  direccion: _direccionCtrl.text,
+  fotoClienteUrl: _fotoCliente?.path,
+  fotoCelularEntregadoUrl: _fotoCelular?.path,
+  fotoContrato: _fotoContrato?.path,
+);
+// Guardar el detalle del cliente en registroData
+  registroData.cliente ??= ClienteDTO(); // Crear cliente si no existe
+registroData.cliente!.detalleCliente = detalle;
 
-    // --- CAMBIO AQUÍ: Usamos DetalleClienteDTO ---
-    final detalle = DetalleClienteDTO(
-      numeroCedula: _cedulaCtrl.text,
-      nombreApellidos: _nombreCtrl.text,
-      telefono: _telefonoCtrl.text,
-      direccion: _direccionCtrl.text,
-      // Por ahora mandamos el path del archivo.
-      // En la capa de datos convertiremos a Base64 si la API lo pide.
-      fotoClienteUrl: _fotoCliente?.path,
-      fotoCelularEntregadoUrl: _fotoCelular?.path,
-      fotoContrato: _fotoContrato?.path,
-    );
+// Si quieres guardar las fotos en el DTO, podrías hacer algo así
+//registroData.cliente!.detalleCliente!.fotoClienteUrl = _fotoCliente;
+//registroData.cliente!.detalleCliente!.fotoCelularEntregadoUrl = _fotoCelular;
+//registroData.cliente!.detalleCliente!.fotoContrato = _fotoContrato;
 
-    context.read<RegisterProvider>().setDetalleCliente(detalle);
+
     context.push('/store-data');
   }
 
