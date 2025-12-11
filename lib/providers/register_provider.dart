@@ -19,10 +19,11 @@ class RegisterProvider extends ChangeNotifier {
   DetalleClienteDTO? get detalleCliente => _detalleClienteData;
 
   // 1. Guardar Datos Básicos (UsuarioDTO)
-  void setUsuarioBasico(String nombre, String correo, String clave) {
+  void setUsuarioBasico(String nombre, String correo, String clave, String? fotoUrl) { // <--- Nuevo parámetro
     _usuarioData.nombreApellidos = nombre;
     _usuarioData.correo = correo;
     _usuarioData.clave = clave;
+    _usuarioData.fotoUrl = fotoUrl; // <--- Guardamos la URL
     notifyListeners();
   }
 

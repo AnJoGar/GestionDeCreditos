@@ -5,6 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:provider/provider.dart';
 import '../../providers/register_provider.dart';
+import '../../data/services/firebase_service.dart'; // <--- Importar servicio
 import '../widgets/custom_text_field.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -22,6 +23,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
+
+  bool _isUploading = false; // <--- Control de carga
 
   @override
   void dispose() {
@@ -63,9 +66,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
-  void _onNextPressed() {
+  void _onNextPressed() async {
+    // 1. Validar Formulario
     if (!_formKey.currentState!.validate()) return;
 
+    // 2. Validar Foto local
     if (_selectedImage == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('La foto de perfil es obligatoria'), backgroundColor: Colors.red),
@@ -73,18 +78,47 @@ class _RegisterScreenState extends State<RegisterScreen> {
       return;
     }
 
-    // --- CAMBIO AQUÍ: Usamos el nuevo método del Provider ---
-    context.read<RegisterProvider>().setUsuarioBasico(
-        _nameController.text,
-        _emailController.text,
-        _passController.text
+    // 3. Iniciar Carga a Firebase
+    setState(() => _isUploading = true);
+
+    // Diálogo de bloqueo
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => const Center(child: CircularProgressIndicator()),
     );
 
-    // NOTA: La foto de perfil del usuario (_selectedImage) deberíamos guardarla también.
-    // Como tu UsuarioDTO no tiene campo de foto explícito en el JSON principal (solo en DetalleCliente),
-    // asumiremos que esta foto es visual o se manejará luego.
+    String? fotoUrlFirebase;
+    final firebaseService = FirebaseService();
 
-    context.push('/client-data');
+    // Subir a carpeta 'perfiles_usuarios'
+    fotoUrlFirebase = await firebaseService.uploadImage(_selectedImage!, 'perfiles_usuarios');
+
+    // Cerrar loading
+    if (mounted) Navigator.pop(context);
+    setState(() => _isUploading = false);
+
+    // 4. Verificar éxito
+    if (fotoUrlFirebase == null) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Error al subir la foto de perfil.'), backgroundColor: Colors.red),
+        );
+      }
+      return;
+    }
+
+    // 5. Guardar URL en el Provider y Avanzar
+    if (mounted) {
+      context.read<RegisterProvider>().setUsuarioBasico(
+        _nameController.text,
+        _emailController.text,
+        _passController.text,
+        fotoUrlFirebase, // <--- Pasamos la URL
+      );
+
+      context.push('/client-data');
+    }
   }
 
   @override
@@ -131,7 +165,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 key: _formKey,
                 child: Column(
                   children: [
-                    // ... (El código de la foto se mantiene igual que antes) ...
+                    const Text('Foto de Perfil', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey)),
+                    const SizedBox(height: 10),
                     Center(
                       child: Stack(
                         children: [
@@ -172,10 +207,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     const SizedBox(height: 20),
                     CustomTextField(
-                      label: 'Contraseña',
-                      icon: Icons.lock_outline,
-                      isPassword: true,
-                      controller: _passController,
+                      label: 'Contraseña', icon: Icons.lock_outline, isPassword: true, controller: _passController,
                       validator: (value) {
                         if (value == null || value.isEmpty) return 'La contraseña es obligatoria';
                         if (value.length < 12) return 'Mínimo 12 caracteres';
@@ -186,7 +218,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     const SizedBox(height: 40),
                     SizedBox(
                       width: double.infinity, height: 55,
-                      child: ElevatedButton(onPressed: _onNextPressed, child: const Text('SIGUIENTE', style: TextStyle(fontSize: 18))),
+                      child: ElevatedButton(
+                          onPressed: _isUploading ? null : _onNextPressed,
+                          child: const Text('SIGUIENTE', style: TextStyle(fontSize: 18))
+                      ),
                     ),
                   ],
                 ),
@@ -199,7 +234,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 }
 
-// Botón auxiliar (mismo de siempre)
 class _OptionBtn extends StatelessWidget {
   final IconData icon; final String label; final VoidCallback onTap;
   const _OptionBtn({required this.icon, required this.label, required this.onTap});

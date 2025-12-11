@@ -1,3 +1,19 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Herramientas base de Android y Kotlin (ajusta las versiones si tu proyecto usaba otras)
+        classpath("com.android.tools.build:gradle:8.1.0")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20")
+
+        // --- AQUÍ ESTÁ EL DE FIREBASE ---
+        classpath("com.google.gms:google-services:4.4.2")
+    }
+}
+
+// ... Aquí sigue lo que ya tenías (allprojects, val newBuildDir, etc.) ...
 allprojects {
     repositories {
         google()
@@ -5,10 +21,7 @@ allprojects {
     }
 }
 
-val newBuildDir: Directory =
-    rootProject.layout.buildDirectory
-        .dir("../../build")
-        .get()
+val newBuildDir: Directory = rootProject.layout.buildDirectory.dir("../../build").get()
 rootProject.layout.buildDirectory.value(newBuildDir)
 
 subprojects {

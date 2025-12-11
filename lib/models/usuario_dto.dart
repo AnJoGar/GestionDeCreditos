@@ -8,7 +8,8 @@ class UsuarioDTO {
   String? rolDescripcion;
   String? clave;
   int? esActivo;
-  ClienteDTO? cliente; // Relación anidada para registro completo
+  String? fotoUrl; // <--- NUEVO CAMPO
+  ClienteDTO? cliente;
 
   UsuarioDTO({
     this.id = 0,
@@ -18,6 +19,7 @@ class UsuarioDTO {
     this.rolDescripcion,
     this.clave,
     this.esActivo,
+    this.fotoUrl, // <--- Agregar al constructor
     this.cliente,
   });
 
@@ -29,6 +31,7 @@ class UsuarioDTO {
     'RolDescripcion': rolDescripcion,
     'Clave': clave,
     'EsActivo': esActivo,
+    'FotoUrl': fotoUrl, // <--- Agregar al JSON
     'Cliente': cliente?.toJson(),
   };
 }

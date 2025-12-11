@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../providers/register_provider.dart';
-import '../../models/tienda_crear_dto.dart'; // <--- IMPORT DTO
+import '../../models/tienda_crear_dto.dart';
+import '../../data/services/firebase_service.dart'; // Importar servicio
 import '../widgets/custom_text_field.dart';
-import '../widgets/photo_upload_card.dart'; // <--- Para el logo
+import '../widgets/photo_upload_card.dart';
 
 class StoreDataScreen extends StatefulWidget {
   const StoreDataScreen({super.key});
@@ -21,40 +22,77 @@ class _StoreDataScreenState extends State<StoreDataScreen> {
   final _encargadoCtrl = TextEditingController();
   final _telefonoCtrl = TextEditingController();
   final _direccionCtrl = TextEditingController();
-  final _codigoTiendaCtrl = TextEditingController(); // <--- NUEVO CAMPO
+  final _codigoTiendaCtrl = TextEditingController();
 
-  File? _logoTienda; // <--- Para el logo
+  File? _logoTienda;
+  bool _isUploading = false;
 
   @override
   void initState() {
     super.initState();
-    //final usuarioNombre = context.read<RegisterProvider>().usuario.nombreApellidos;
-    //_encargadoCtrl.text = usuarioNombre ?? '';
+    // NOTA: No pre-llenamos el encargado, se deja vacío según requerimiento.
   }
 
   @override
   void dispose() {
-    _nombreTiendaCtrl.dispose(); _encargadoCtrl.dispose(); _telefonoCtrl.dispose();
-    _direccionCtrl.dispose(); _codigoTiendaCtrl.dispose();
+    _nombreTiendaCtrl.dispose();
+    _encargadoCtrl.dispose();
+    _telefonoCtrl.dispose();
+    _direccionCtrl.dispose();
+    _codigoTiendaCtrl.dispose();
     super.dispose();
   }
 
-  void _onNextPressed() {
+  void _onNextPressed() async {
+    // 1. Validar formulario
     if (!_formKey.currentState!.validate()) return;
 
-    // --- CAMBIO AQUÍ: Usamos TiendaCrearDTO ---
+    setState(() => _isUploading = true);
+    String? urlLogo;
+
+    // 2. Subir Logo solo si existe (es opcional)
+    if (_logoTienda != null) {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => const Center(child: CircularProgressIndicator()),
+      );
+
+      final firebaseService = FirebaseService();
+      urlLogo = await firebaseService.uploadImage(_logoTienda!, 'logos_tiendas');
+
+      if (mounted) Navigator.pop(context); // Cerrar loading
+
+      if (urlLogo == null) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Error al subir el logo, intenta de nuevo.'), backgroundColor: Colors.red),
+          );
+        }
+        setState(() => _isUploading = false);
+        return;
+      }
+    }
+
+    setState(() => _isUploading = false);
+
+    // 3. Crear DTO con la URL
     final tienda = TiendaCrearDTO(
       nombreTienda: _nombreTiendaCtrl.text,
       nombreEncargado: _encargadoCtrl.text,
       telefono: _telefonoCtrl.text,
       direccion: _direccionCtrl.text,
-      codigoTienda: _codigoTiendaCtrl.text, // Campo nuevo
-      // Pasamos path. La conversión a Base64 se hará al enviar.
-      logoBase64: _logoTienda?.path,
+      codigoTienda: _codigoTiendaCtrl.text,
+      // Aunque el campo se llame logoBase64 en el DTO (por compatibilidad legacy),
+      // le pasamos la URL de Firebase que es un String.
+      logoBase64: urlLogo,
     );
 
-    context.read<RegisterProvider>().setTienda(tienda);
-    context.push('/credit-data');
+    // 4. Guardar y Avanzar
+    if (mounted) {
+      context.read<RegisterProvider>().setTienda(tienda);
+      context.push('/credit-data');
+    }
   }
 
   @override
@@ -67,10 +105,10 @@ class _StoreDataScreenState extends State<StoreDataScreen> {
           key: _formKey,
           child: Column(
             children: [
-              // --- SECCIÓN LOGO (NUEVA) ---
+              // Sección de Logo
               Center(
                 child: SizedBox(
-                  width: 170,
+                  width: 150,
                   child: PhotoUploadCard(
                     label: 'Logo Tienda (Opcional)',
                     onImageSelected: (file) => _logoTienda = file,
@@ -80,31 +118,55 @@ class _StoreDataScreenState extends State<StoreDataScreen> {
               const SizedBox(height: 20),
 
               CustomTextField(
-                label: 'Nombre de la Tienda', controller: _nombreTiendaCtrl, icon: Icons.store,
-                validator: (v) => v!.isEmpty ? 'Requerido' : null,
+                label: 'Nombre de la Tienda',
+                controller: _nombreTiendaCtrl,
+                icon: Icons.store,
+                validator: (v) => (v == null || v.isEmpty) ? 'Requerido' : null,
               ),
               const SizedBox(height: 15),
+
               CustomTextField(
-                label: 'Código de Tienda', controller: _codigoTiendaCtrl, icon: Icons.qr_code,
-                validator: (v) => v!.isEmpty ? 'Código requerido' : null,
+                label: 'Código de Tienda',
+                controller: _codigoTiendaCtrl,
+                icon: Icons.qr_code,
+                validator: (v) => (v == null || v.isEmpty) ? 'Requerido' : null,
               ),
               const SizedBox(height: 15),
+
               CustomTextField(
-                label: 'Nombre Encargado', controller: _encargadoCtrl, icon: Icons.person_pin,
-                validator: (v) => v!.isEmpty ? 'Requerido' : null,
+                label: 'Nombre Encargado',
+                controller: _encargadoCtrl,
+                icon: Icons.person_pin,
+                validator: (v) => (v == null || v.isEmpty) ? 'Requerido' : null,
               ),
               const SizedBox(height: 15),
+
               CustomTextField(
-                label: 'Teléfono Tienda', controller: _telefonoCtrl, keyboardType: TextInputType.phone, icon: Icons.phone_android,
-                validator: (v) => (v!.isEmpty || v.length != 10) ? 'Debe tener 10 dígitos' : null,
+                label: 'Teléfono Tienda',
+                controller: _telefonoCtrl,
+                keyboardType: TextInputType.phone,
+                icon: Icons.phone_android,
+                validator: (v) => (v == null || v.length != 10) ? 'Debe tener 10 dígitos' : null,
               ),
               const SizedBox(height: 15),
+
               CustomTextField(
-                label: 'Dirección', controller: _direccionCtrl, icon: Icons.location_city,
-                validator: (v) => v!.isEmpty ? 'Requerido' : null,
+                label: 'Dirección',
+                controller: _direccionCtrl,
+                icon: Icons.location_city,
+                validator: (v) => (v == null || v.isEmpty) ? 'Requerido' : null,
               ),
+
               const SizedBox(height: 40),
-              SizedBox(width: double.infinity, height: 55, child: ElevatedButton(onPressed: _onNextPressed, child: const Text('SIGUIENTE: DATOS CRÉDITO'))),
+
+              SizedBox(
+                width: double.infinity,
+                height: 55,
+                child: ElevatedButton(
+                  onPressed: _isUploading ? null : _onNextPressed,
+                  child: const Text('SIGUIENTE: DATOS CRÉDITO'),
+                ),
+              ),
             ],
           ),
         ),
