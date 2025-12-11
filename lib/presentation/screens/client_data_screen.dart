@@ -7,6 +7,9 @@ import '../../models/detalle_cliente_dto.dart';
 import '../../data/services/firebase_service.dart'; // Asegúrate de tener este archivo creado
 import '../widgets/custom_text_field.dart';
 import '../widgets/photo_upload_card.dart';
+import '../../services/UsuarioRegistroData.dart';
+
+import '../../models/cliente_dto.dart';
 
 class ClientDataScreen extends StatefulWidget {
   const ClientDataScreen({super.key});
@@ -16,6 +19,8 @@ class ClientDataScreen extends StatefulWidget {
 }
 
 class _ClientDataScreenState extends State<ClientDataScreen> {
+
+    UsuarioRegistroData registroData = UsuarioRegistroData();
   final _formKey = GlobalKey<FormState>();
 
   // Controladores
@@ -63,7 +68,25 @@ class _ClientDataScreenState extends State<ClientDataScreen> {
       );
       return;
     }
+final detalle = DetalleClienteDTO(
+  numeroCedula: _cedulaCtrl.text,
+  nombreApellidos: _nombreCtrl.text,
+  telefono: _telefonoCtrl.text,
+  direccion: _direccionCtrl.text,
+  fotoClienteUrl: _fotoCliente?.path,
+  fotoCelularEntregadoUrl: _fotoCelular?.path,
+  fotoContrato: _fotoContrato?.path,
+);
+// Guardar el detalle del cliente en registroData
+  registroData.cliente ??= ClienteDTO(); // Crear cliente si no existe
+registroData.cliente!.detalleCliente = detalle;
 
+// Si quieres guardar las fotos en el DTO, podrías hacer algo así
+//registroData.cliente!.detalleCliente!.fotoClienteUrl = _fotoCliente;
+//registroData.cliente!.detalleCliente!.fotoCelularEntregadoUrl = _fotoCelular;
+//registroData.cliente!.detalleCliente!.fotoContrato = _fotoContrato;
+
+<<<<<<< HEAD
     // 3. Iniciar proceso de subida
     setState(() => _isUploading = true);
 
@@ -132,6 +155,10 @@ class _ClientDataScreenState extends State<ClientDataScreen> {
       setState(() => _isUploading = false);
       print("Error crítico: $e");
     }
+=======
+
+    context.push('/store-data');
+>>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
   }
 
   @override

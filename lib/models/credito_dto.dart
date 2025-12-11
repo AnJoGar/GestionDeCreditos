@@ -1,44 +1,67 @@
 class CreditoDTO {
   int id;
-  double monto;
+  double montoTotal;
   double entrada; // <--- Agregado
   int plazoCuotas;
   String frecuenciaPago;
   DateTime diaPago;
-  double valorPorCuota;
-  double totalPagar;
-  DateTime proximaCuota;
+  
+  
+  double? valorPorCuota;
+  double? montoPendiente;
+
+  DateTime? proximaCuota;
   String? proximaCuotaStr;
   String? estado;
   int clienteId;
 
   CreditoDTO({
     this.id = 0,
-    required this.monto,
+    required this.montoTotal,
     this.entrada = 0.0,
     required this.plazoCuotas,
     required this.frecuenciaPago,
     required this.diaPago,
-    required this.valorPorCuota,
-    required this.totalPagar,
-    required this.proximaCuota,
+    this.valorPorCuota,
+    this.montoPendiente,
+    this.proximaCuota,
     this.proximaCuotaStr,
     this.estado,
     this.clienteId = 0,
   });
 
+ // ------------------- FROM JSON -------------------
+  factory CreditoDTO.fromJson(Map<String, dynamic> json) {
+    DateTime parseDate(dynamic date) {
+      if (date is String) return DateTime.parse(date);
+      if (date is int) return DateTime.fromMillisecondsSinceEpoch(date);
+      return DateTime.now();
+    }
+
+    return CreditoDTO(
+      id: json['Id'] ?? 0,
+      montoTotal: (json['MontoTotal'] ?? 0).toDouble(),
+      entrada: (json['Entrada'] ?? 0).toDouble(),
+      plazoCuotas: json['PlazoCuotas'] ?? 0,
+      frecuenciaPago: json['FrecuenciaPago'] ?? '',
+      diaPago: parseDate(json['DiaPago']),
+      valorPorCuota: (json['ValorPorCuota'] ?? 0).toDouble(),
+      montoPendiente: (json['MontoPendiente'] ?? 0).toDouble(),
+      proximaCuota: parseDate(json['ProximaCuota']),
+      proximaCuotaStr: json['ProximaCuotaStr'],
+      estado: json['Estado'],
+      clienteId: json['ClienteId'] ?? 0,
+    );
+  }
+
+  // ------------------- TO JSON -------------------
   Map<String, dynamic> toJson() => {
-    'Id': id,
-    'Monto': monto,
-    'Entrada': entrada, // Nuevo campo
-    'PlazoCuotas': plazoCuotas,
-    'FrecuenciaPago': frecuenciaPago,
-    'DiaPago': diaPago.toIso8601String(),
-    'ValorPorCuota': valorPorCuota,
-    'TotalPagar': totalPagar,
-    'ProximaCuota': proximaCuota.toIso8601String(),
-    'ProximaCuotaStr': proximaCuotaStr,
-    'Estado': estado,
-    'ClienteId': clienteId,
-  };
+        'Id': id,
+        'Monto': montoTotal,
+        'Entrada': entrada,
+        'PlazoCuotas': plazoCuotas,
+        'FrecuenciaPago': frecuenciaPago,
+        'DiaPago': diaPago.toIso8601String(),
+        'ClienteId': clienteId,
+      };
 }

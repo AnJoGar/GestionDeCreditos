@@ -5,8 +5,13 @@ import 'package:image_picker/image_picker.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:provider/provider.dart';
 import '../../providers/register_provider.dart';
+<<<<<<< HEAD
 import '../../data/services/firebase_service.dart'; // <--- Importar servicio
+=======
+
+>>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
 import '../widgets/custom_text_field.dart';
+import '../../services/UsuarioRegistroData.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -16,6 +21,8 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+
+  UsuarioRegistroData registroData = UsuarioRegistroData();
   File? _selectedImage;
   final ImagePicker _picker = ImagePicker();
   final _formKey = GlobalKey<FormState>();
@@ -33,7 +40,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _passController.dispose();
     super.dispose();
   }
-
+/*
   Future<void> _pickImage(ImageSource source) async {
     final XFile? pickedFile = await _picker.pickImage(source: source);
     if (pickedFile != null) {
@@ -64,7 +71,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
     );
-  }
+  }*/
 
   void _onNextPressed() async {
     // 1. Validar Formulario
@@ -78,6 +85,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       return;
     }
 
+<<<<<<< HEAD
     // 3. Iniciar Carga a Firebase
     setState(() => _isUploading = true);
 
@@ -119,6 +127,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
       context.push('/client-data');
     }
+=======
+
+  // Guardar datos del usuario en registroData
+  registroData.nombreApellidos = _nameController.text;
+  registroData.correo = _emailController.text;
+  registroData.clave = _passController.text;
+  registroData.rolId = 2; // ejemplo
+
+   // Obtener correo desde RegistroData
+
+
+  // Navegar a la siguiente pantalla
+  Navigator.pushNamed(context, '/client-data');
+    // --- CAMBIO AQUÍ: Usamos el nuevo método del Provider ---
+    
+>>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
   }
 
   @override
@@ -165,9 +189,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 key: _formKey,
                 child: Column(
                   children: [
+<<<<<<< HEAD
                     const Text('Foto de Perfil', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey)),
                     const SizedBox(height: 10),
                     Center(
+=======
+                    // ... (El código de la foto se mantiene igual que antes) ...
+/*                    Center(
+>>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
                       child: Stack(
                         children: [
                           Container(
@@ -194,7 +223,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 30),*/
 
                     CustomTextField(
                       label: 'Nombre y Apellidos', icon: Icons.person_outline, controller: _nameController,

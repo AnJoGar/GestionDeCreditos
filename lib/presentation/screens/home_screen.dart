@@ -19,13 +19,13 @@ class _HomeScreenState extends State<HomeScreen> {
   final String _emailUsuario = "luis@ejemplo.com";
 
   final CreditoDTO _creditoMock = CreditoDTO(
-      monto: 800.00,
+      montoTotal: 800.00,
       entrada: 50.00,
       plazoCuotas: 12,
       frecuenciaPago: "Mensual",
       diaPago: DateTime.now(),
       valorPorCuota: 75.50,
-      totalPagar: 906.00, // Con intereses supuestos
+      montoPendiente: 906.00, // Con intereses supuestos
       proximaCuota: DateTime.now().add(const Duration(days: 15)),
       estado: "AL DÍA",
       clienteId: 1
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
     nombreEncargado: "Luis",
     telefono: "0999999999",
     direccion: "Av. Principal 123",
-    fechaRegistro: DateTime.now(),
+  //  fechaRegistro: DateTime.now(),
   );
 
   @override

@@ -3,8 +3,13 @@ import 'package:go_router/go_router.dart';
 import 'package:pinput/pinput.dart';
 import 'package:animate_do/animate_do.dart';
 import '../../data/services/auth_service.dart';
+import '../../services/usuario_service.dart';
 import '../../models/verificar_dto.dart';
-
+import '../../services/ValidarCuenta.dart';
+import '../../services/UsuarioRegistroData.dart';
+import '../../services/UsuarioRegistroData.dart';
+import '../../providers/register_provider.dart';
+import 'package:provider/provider.dart';
 class VerifyOtpScreen extends StatefulWidget {
   final String email;
 
@@ -15,6 +20,8 @@ class VerifyOtpScreen extends StatefulWidget {
 }
 
 class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
+
+  UsuarioRegistroData registroData = UsuarioRegistroData();
   final TextEditingController _pinController = TextEditingController();
   bool _isLoading = false;
 
@@ -30,31 +37,54 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
     setState(() {
       _isLoading = true;
     });
-
+     final correoUser = context.read<RegisterProvider>().usuario.correo!;
     // 1. Preparar DTO
     final datos = VerificarDTO(
-      correo: widget.email,
+      correo: correoUser,
       codigo: codigo,
     );
 
     // 2. Llamar al servicio
-    final authService = AuthService();
-    final exito = await authService.verificarCodigo(datos);
+    final authService = ValidarCuenta();
+    final exito = await authService.verificarCuenta(datos);
 
     setState(() {
       _isLoading = false;
     });
 
-    if (exito) {
-      _showSuccessDialog();
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Código incorrecto o expirado.'),
-          backgroundColor: Colors.red,
-        ),
-      );
-    }
+    if (exito == null) {
+    setState(() => _isLoading = false);
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Código incorrecto o expirado.'),
+        backgroundColor: Colors.red,
+      ),
+    );
+    return; // ❌ NO seguimos registrando
+  }
+    // -----------------------------------
+  //  CÓDIGO EXTRA – ARMAR REGISTRO FINAL
+  // -----------------------------------
+  final register = context.read<RegisterProvider>();
+
+  
+// Construimos el DTO COMPLETO con todo anidado:
+  final usuarioFinal = register.getUsuarioFinal();
+  // Llamar a tu servicio que crea el usuario en DB
+  final servicio = UsuarioService();
+  final creado = await servicio.crearUsuario(usuarioFinal);
+
+  if (creado!= null) {
+    _showSuccessDialog();
+  } else {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Error al crear el usuario en el servidor.'),
+        backgroundColor: Colors.red,
+      ),
+    );
+  }
+  
   }
 
   void _showSuccessDialog() {

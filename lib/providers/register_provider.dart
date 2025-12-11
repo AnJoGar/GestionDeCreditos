@@ -75,7 +75,7 @@ class RegisterProvider extends ChangeNotifier {
     print("User: ${_usuarioData.nombreApellidos}");
     print("Cedula: ${_detalleClienteData?.numeroCedula}");
     print("Tienda: ${_tiendaData?.nombreTienda}");
-    print("Credito Total: ${_creditoData?.totalPagar}");
+    print("Credito Total: ${_creditoData?.montoTotal}");
   }
 
   UsuarioDTO getUsuarioFinal() {

@@ -6,7 +6,10 @@ import '../../providers/register_provider.dart';
 import '../../models/credito_dto.dart'; // <--- IMPORT DTO
 import '../../data/services/auth_service.dart';
 import '../widgets/custom_text_field.dart';
-
+import '../../services/UsuarioRegistroData.dart';
+import '../../models/cliente_dto.dart';
+import '../../models/enviar_codigo_dto.dart';
+import '../../services/ValidarCuenta.dart';
 class CreditDataScreen extends StatefulWidget {
   const CreditDataScreen({super.key});
 
@@ -15,6 +18,8 @@ class CreditDataScreen extends StatefulWidget {
 }
 
 class _CreditDataScreenState extends State<CreditDataScreen> {
+
+    UsuarioRegistroData registroData = UsuarioRegistroData();
   final _precioCtrl = TextEditingController();
   final _entradaCtrl = TextEditingController();
   final _cuotasCtrl = TextEditingController();
@@ -89,46 +94,40 @@ class _CreditDataScreenState extends State<CreditDataScreen> {
 
     // 2. Guardar último paso en Provider
     final credito = CreditoDTO(
-      monto: double.parse(_precioCtrl.text),
+      montoTotal: double.parse(_precioCtrl.text),
       entrada: double.tryParse(_entradaCtrl.text) ?? 0,
       plazoCuotas: int.parse(_cuotasCtrl.text),
       frecuenciaPago: _frecuencia,
-      diaPago: _fechaPago,
-      valorPorCuota: _valorCuota,
-      totalPagar: _montoFinanciar,
-      proximaCuota: _proximaCuota,
-      estado: 'PENDIENTE',
+      diaPago:  DateTime.now(),
+     
     );
-    context.read<RegisterProvider>().setCredito(credito);
 
-    // 3. Armar el JSON Gigante
-    final usuarioCompleto = context.read<RegisterProvider>().armarJsonRegistroCompleto();
+  registroData.cliente ??= ClienteDTO(); // Crear cliente si no existe
+registroData.cliente!.creditos = [];
+registroData.cliente!.creditos!.add(credito);
 
-    // 4. Enviar a la API (Nota: necesitamos convertir el JSON map de vuelta a objeto DTO para el servicio,
-    // o ajustar el servicio para recibir Map. Por limpieza, usaremos el objeto DTO del provider si es posible,
-    // pero como armarJsonRegistroCompleto devuelve Map, lo usaremos así).
+  final correoUser1 = context.read<RegisterProvider>().usuario.correo!;
+   // context.read<RegisterProvider>().setCredito(credito);
 
-    // Truco: Para usar el AuthService tal cual, reconstruimos el objeto desde el JSON armado
-    // O mejor, modificamos AuthService para aceptar Map si fuera necesario, pero mantengamos el tipado fuerte.
-    // Vamos a asumir que tu Provider tiene una forma de devolver el UsuarioDTO completo.
 
-    // CORRECCIÓN RÁPIDA: Accederemos a los datos internos del provider para armar el DTO final aquí mismo o en el provider.
-    // (Asumimos que agregaste un getter en el provider llamado `usuarioDTOCompleto` o usamos la lógica interna).
+   // final usuarioDto = context.read<RegisterProvider>().getUsuarioFinal(); // <--- Necesitas crear este método en Provider
+ 
+ 
+ final validarCuenta = ValidarCuenta();
+  final enviado = await validarCuenta.enviarCodigo(
+    EnviarCodigoDTO(correo: correoUser1),
+  );
 
-    // ... Supongamos que armaste el objeto 'usuarioFinal' ...
-    // Para simplificar, haremos que el provider tenga un método 'getUsuarioFinal()' que devuelva el objeto UsuarioDTO.
-
-    final usuarioDto = context.read<RegisterProvider>().getUsuarioFinal(); // <--- Necesitas crear este método en Provider
-
-    final authService = AuthService();
-    final exito = await authService.registrarUsuario(usuarioDto);
+//    final authService = AuthService();
+   // final exito = await authService.registrarUsuario(usuarioDto);
 
     // 5. Cerrar carga y navegar
     Navigator.pop(context); // Cierra el loading
 
-    if (exito) {
-      final correoUser = context.read<RegisterProvider>().usuario.correo;
-      context.push('/verify-otp', extra: correoUser);
+    if (enviado != null) {
+  final correoUser = context.read<RegisterProvider>().usuario.correo!;
+      
+      context.push('/verify-otp', extra: correoUser1);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Error al registrar. Verifica tu conexión o datos.'), backgroundColor: Colors.red)

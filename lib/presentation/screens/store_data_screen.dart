@@ -6,8 +6,15 @@ import '../../providers/register_provider.dart';
 import '../../models/tienda_crear_dto.dart';
 import '../../data/services/firebase_service.dart'; // Importar servicio
 import '../widgets/custom_text_field.dart';
+<<<<<<< HEAD
 import '../widgets/photo_upload_card.dart';
+=======
+import '../widgets/photo_upload_card.dart'; 
+import '../../services/UsuarioRegistroData.dart';// <--- Para el logo
+import '../../models/cliente_dto.dart';
+>>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
 
+import '../../models/tienda_dto.dart';
 class StoreDataScreen extends StatefulWidget {
   const StoreDataScreen({super.key});
 
@@ -17,6 +24,7 @@ class StoreDataScreen extends StatefulWidget {
 
 class _StoreDataScreenState extends State<StoreDataScreen> {
   final _formKey = GlobalKey<FormState>();
+   UsuarioRegistroData registroData = UsuarioRegistroData();
 
   final _nombreTiendaCtrl = TextEditingController();
   final _encargadoCtrl = TextEditingController();
@@ -47,6 +55,7 @@ class _StoreDataScreenState extends State<StoreDataScreen> {
     // 1. Validar formulario
     if (!_formKey.currentState!.validate()) return;
 
+<<<<<<< HEAD
     setState(() => _isUploading = true);
     String? urlLogo;
 
@@ -78,10 +87,15 @@ class _StoreDataScreenState extends State<StoreDataScreen> {
 
     // 3. Crear DTO con la URL
     final tienda = TiendaCrearDTO(
+=======
+    // --- CAMBIO AQUÍ: Usamos TiendaCrearDTO ---
+    final  tienda = TiendaDTO(
+>>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
       nombreTienda: _nombreTiendaCtrl.text,
       nombreEncargado: _encargadoCtrl.text,
       telefono: _telefonoCtrl.text,
       direccion: _direccionCtrl.text,
+<<<<<<< HEAD
       codigoTienda: _codigoTiendaCtrl.text,
       // Aunque el campo se llame logoBase64 en el DTO (por compatibilidad legacy),
       // le pasamos la URL de Firebase que es un String.
@@ -93,6 +107,19 @@ class _StoreDataScreenState extends State<StoreDataScreen> {
       context.read<RegisterProvider>().setTienda(tienda);
       context.push('/credit-data');
     }
+=======
+// Campo nuevo
+     
+
+    );
+    final List<TiendaDTO> listaTienda = [tienda];
+  registroData.cliente ??= ClienteDTO(); // Crear cliente si no existe
+registroData.cliente!.tiendas = [];
+registroData.cliente!.tiendas!.add(tienda);
+
+  //  context.read<RegisterProvider>().setTienda(tienda);
+    context.push('/credit-data');
+>>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
   }
 
   @override
