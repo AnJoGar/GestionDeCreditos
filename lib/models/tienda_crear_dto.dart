@@ -4,7 +4,6 @@ class TiendaCrearDTO {
   String telefono;
   String direccion;
   String codigoTienda;
-  String? logoBase64;
 
   TiendaCrearDTO({
     required this.nombreTienda,
@@ -12,7 +11,6 @@ class TiendaCrearDTO {
     required this.telefono,
     required this.direccion,
     required this.codigoTienda,
-    this.logoBase64,
   });
 
   Map<String, dynamic> toJson() => {
@@ -21,6 +19,5 @@ class TiendaCrearDTO {
     'Telefono': telefono,
     'Direccion': direccion,
     'CodigoTienda': codigoTienda,
-    'LogoBase64': logoBase64,
   };
 }

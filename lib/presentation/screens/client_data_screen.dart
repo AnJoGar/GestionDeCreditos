@@ -79,14 +79,12 @@ final detalle = DetalleClienteDTO(
 );
 // Guardar el detalle del cliente en registroData
   registroData.cliente ??= ClienteDTO(); // Crear cliente si no existe
-registroData.cliente!.detalleCliente = detalle;
+  registroData.cliente!.detalleCliente = detalle;
 
 // Si quieres guardar las fotos en el DTO, podrías hacer algo así
 //registroData.cliente!.detalleCliente!.fotoClienteUrl = _fotoCliente;
 //registroData.cliente!.detalleCliente!.fotoCelularEntregadoUrl = _fotoCelular;
 //registroData.cliente!.detalleCliente!.fotoContrato = _fotoContrato;
-
-<<<<<<< HEAD
     // 3. Iniciar proceso de subida
     setState(() => _isUploading = true);
 
@@ -155,10 +153,8 @@ registroData.cliente!.detalleCliente = detalle;
       setState(() => _isUploading = false);
       print("Error crítico: $e");
     }
-=======
 
     context.push('/store-data');
->>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
   }
 
   @override

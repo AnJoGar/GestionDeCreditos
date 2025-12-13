@@ -1,17 +1,9 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:provider/provider.dart';
 import '../../providers/register_provider.dart';
-<<<<<<< HEAD
-import '../../data/services/firebase_service.dart'; // <--- Importar servicio
-=======
-
->>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
 import '../widgets/custom_text_field.dart';
-import '../../services/UsuarioRegistroData.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -21,17 +13,11 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-
-  UsuarioRegistroData registroData = UsuarioRegistroData();
-  File? _selectedImage;
-  final ImagePicker _picker = ImagePicker();
   final _formKey = GlobalKey<FormState>();
 
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
-
-  bool _isUploading = false; // <--- Control de carga
 
   @override
   void dispose() {
@@ -40,109 +26,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _passController.dispose();
     super.dispose();
   }
-/*
-  Future<void> _pickImage(ImageSource source) async {
-    final XFile? pickedFile = await _picker.pickImage(source: source);
-    if (pickedFile != null) {
-      setState(() {
-        _selectedImage = File(pickedFile.path);
-      });
-    }
-  }
 
-  void _showImageSourceModal() {
-    showModalBottomSheet(
-      context: context,
-      builder: (_) => Container(
-        padding: const EdgeInsets.all(20),
-        height: 150,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            _OptionBtn(icon: Icons.camera_alt, label: 'Cámara', onTap: () {
-              Navigator.pop(context);
-              _pickImage(ImageSource.camera);
-            }),
-            _OptionBtn(icon: Icons.image, label: 'Galería', onTap: () {
-              Navigator.pop(context);
-              _pickImage(ImageSource.gallery);
-            }),
-          ],
-        ),
-      ),
-    );
-  }*/
-
-  void _onNextPressed() async {
+  void _onNextPressed() {
     // 1. Validar Formulario
     if (!_formKey.currentState!.validate()) return;
 
-    // 2. Validar Foto local
-    if (_selectedImage == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('La foto de perfil es obligatoria'), backgroundColor: Colors.red),
-      );
-      return;
-    }
-
-<<<<<<< HEAD
-    // 3. Iniciar Carga a Firebase
-    setState(() => _isUploading = true);
-
-    // Diálogo de bloqueo
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => const Center(child: CircularProgressIndicator()),
-    );
-
-    String? fotoUrlFirebase;
-    final firebaseService = FirebaseService();
-
-    // Subir a carpeta 'perfiles_usuarios'
-    fotoUrlFirebase = await firebaseService.uploadImage(_selectedImage!, 'perfiles_usuarios');
-
-    // Cerrar loading
-    if (mounted) Navigator.pop(context);
-    setState(() => _isUploading = false);
-
-    // 4. Verificar éxito
-    if (fotoUrlFirebase == null) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Error al subir la foto de perfil.'), backgroundColor: Colors.red),
-        );
-      }
-      return;
-    }
-
-    // 5. Guardar URL en el Provider y Avanzar
-    if (mounted) {
-      context.read<RegisterProvider>().setUsuarioBasico(
+    // 2. Guardar en Provider (Sin foto)
+    context.read<RegisterProvider>().setUsuarioBasico(
         _nameController.text,
         _emailController.text,
-        _passController.text,
-        fotoUrlFirebase, // <--- Pasamos la URL
-      );
+        _passController.text
+    );
 
-      context.push('/client-data');
-    }
-=======
-
-  // Guardar datos del usuario en registroData
-  registroData.nombreApellidos = _nameController.text;
-  registroData.correo = _emailController.text;
-  registroData.clave = _passController.text;
-  registroData.rolId = 2; // ejemplo
-
-   // Obtener correo desde RegistroData
-
-
-  // Navegar a la siguiente pantalla
-  Navigator.pushNamed(context, '/client-data');
-    // --- CAMBIO AQUÍ: Usamos el nuevo método del Provider ---
-    
->>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
+    // 3. Avanzar
+    context.push('/client-data');
   }
 
   @override
@@ -154,6 +51,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            // Header Curvo
             Stack(
               children: [
                 Container(
@@ -184,59 +82,35 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
               child: Form(
                 key: _formKey,
                 child: Column(
                   children: [
-<<<<<<< HEAD
-                    const Text('Foto de Perfil', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey)),
-                    const SizedBox(height: 10),
-                    Center(
-=======
-                    // ... (El código de la foto se mantiene igual que antes) ...
-/*                    Center(
->>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
-                      child: Stack(
-                        children: [
-                          Container(
-                            width: 110, height: 110,
-                            decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              shape: BoxShape.circle,
-                              image: _selectedImage != null ? DecorationImage(image: FileImage(_selectedImage!), fit: BoxFit.cover) : null,
-                              border: Border.all(color: theme.primaryColor, width: 2),
-                            ),
-                            child: _selectedImage == null ? Icon(Icons.person, size: 50, color: Colors.grey[400]) : null,
-                          ),
-                          Positioned(
-                            bottom: 0, right: 0,
-                            child: GestureDetector(
-                              onTap: _showImageSourceModal,
-                              child: Container(
-                                padding: const EdgeInsets.all(8),
-                                decoration: BoxDecoration(color: theme.colorScheme.secondary, shape: BoxShape.circle),
-                                child: const Icon(Icons.camera_alt, color: Colors.white, size: 20),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 30),*/
+                    // YA NO HAY FOTO DE PERFIL AQUÍ
 
                     CustomTextField(
-                      label: 'Nombre y Apellidos', icon: Icons.person_outline, controller: _nameController,
+                      label: 'Nombre y Apellidos',
+                      icon: Icons.person_outline,
+                      controller: _nameController,
                       validator: (v) => (v == null || v.trim().length < 5) ? 'Nombre completo requerido' : null,
                     ),
                     const SizedBox(height: 20),
+
                     CustomTextField(
-                      label: 'Correo Electrónico', icon: Icons.email_outlined, keyboardType: TextInputType.emailAddress, controller: _emailController,
+                      label: 'Correo Electrónico',
+                      icon: Icons.email_outlined,
+                      keyboardType: TextInputType.emailAddress,
+                      controller: _emailController,
                       validator: (v) => (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(v ?? '')) ? 'Correo inválido' : null,
                     ),
                     const SizedBox(height: 20),
+
                     CustomTextField(
-                      label: 'Contraseña', icon: Icons.lock_outline, isPassword: true, controller: _passController,
+                      label: 'Contraseña',
+                      icon: Icons.lock_outline,
+                      isPassword: true,
+                      controller: _passController,
                       validator: (value) {
                         if (value == null || value.isEmpty) return 'La contraseña es obligatoria';
                         if (value.length < 12) return 'Mínimo 12 caracteres';
@@ -244,11 +118,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         return null;
                       },
                     ),
-                    const SizedBox(height: 40),
+
+                    const SizedBox(height: 50),
+
                     SizedBox(
-                      width: double.infinity, height: 55,
+                      width: double.infinity,
+                      height: 55,
                       child: ElevatedButton(
-                          onPressed: _isUploading ? null : _onNextPressed,
+                          onPressed: _onNextPressed,
                           child: const Text('SIGUIENTE', style: TextStyle(fontSize: 18))
                       ),
                     ),
@@ -259,18 +136,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class _OptionBtn extends StatelessWidget {
-  final IconData icon; final String label; final VoidCallback onTap;
-  const _OptionBtn({required this.icon, required this.label, required this.onTap});
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Column(children: [CircleAvatar(radius: 30, backgroundColor: Colors.grey[200], child: Icon(icon, color: Theme.of(context).primaryColor)), const SizedBox(height: 5), Text(label, style: const TextStyle(fontWeight: FontWeight.bold))]),
     );
   }
 }

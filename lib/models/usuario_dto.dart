@@ -8,7 +8,6 @@ class UsuarioDTO {
   String? rolDescripcion;
   String? clave;
   int? esActivo;
-  String? fotoUrl; // <--- NUEVO CAMPO
   ClienteDTO? cliente;
 
   UsuarioDTO({
@@ -19,29 +18,11 @@ class UsuarioDTO {
     this.rolDescripcion,
     this.clave,
     this.esActivo,
-    this.fotoUrl, // <--- Agregar al constructor
     this.cliente,
   });
 
-   // ---- FROM JSON ----
-  factory UsuarioDTO.fromJson(Map<String, dynamic> json) {
-    return UsuarioDTO(
-      id: json["id"] ?? 0,
-      nombreApellidos: json["nombreApellidos"],
-      correo: json["correo"],
-      rolId: json["rolId"],
-      rolDescripcion: json["rolDescripcion"],
-      clave: json["clave"],
-      esActivo: json["esActivo"],
-      cliente: json["cliente"] != null
-          ? ClienteDTO.fromJson(json["cliente"])
-          : null,
-    );
-  }
-
-  // ---- TO JSON ----
+  // 1. Método para enviar datos a la API (Serialización)
   Map<String, dynamic> toJson() => {
-<<<<<<< HEAD
     'Id': id,
     'NombreApellidos': nombreApellidos,
     'Correo': correo,
@@ -49,18 +30,24 @@ class UsuarioDTO {
     'RolDescripcion': rolDescripcion,
     'Clave': clave,
     'EsActivo': esActivo,
-    'FotoUrl': fotoUrl, // <--- Agregar al JSON
     'Cliente': cliente?.toJson(),
   };
-=======
-        'Id': id,
-        'NombreApellidos': nombreApellidos,
-        'Correo': correo,
-        'RolId': rolId,
-        'RolDescripcion': rolDescripcion,
-        'Clave': clave,
-        'EsActivo': esActivo,
-        'Cliente': cliente?.toJson(),
-      };
->>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
+
+  // 2. Método para recibir datos de la API (Deserialización) <--- ESTO FALTABA
+  factory UsuarioDTO.fromJson(Map<String, dynamic> json) {
+    return UsuarioDTO(
+      id: json['Id'] ?? 0,
+      nombreApellidos: json['NombreApellidos'],
+      correo: json['Correo'],
+      rolId: json['RolId'],
+      rolDescripcion: json['RolDescripcion'],
+      // La clave usualmente no viene de regreso por seguridad, pero la dejamos por si acaso
+      clave: json['Clave'],
+      esActivo: json['EsActivo'],
+      // Importante: Si viene un objeto 'Cliente', lo convertimos también
+      cliente: json['Cliente'] != null
+          ? ClienteDTO.fromJson(json['Cliente'])
+          : null,
+    );
+  }
 }

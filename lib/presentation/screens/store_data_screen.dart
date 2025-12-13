@@ -4,17 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../providers/register_provider.dart';
 import '../../models/tienda_crear_dto.dart';
-import '../../data/services/firebase_service.dart'; // Importar servicio
 import '../widgets/custom_text_field.dart';
-<<<<<<< HEAD
-import '../widgets/photo_upload_card.dart';
-=======
-import '../widgets/photo_upload_card.dart'; 
-import '../../services/UsuarioRegistroData.dart';// <--- Para el logo
-import '../../models/cliente_dto.dart';
->>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
 
-import '../../models/tienda_dto.dart';
 class StoreDataScreen extends StatefulWidget {
   const StoreDataScreen({super.key});
 
@@ -24,22 +15,12 @@ class StoreDataScreen extends StatefulWidget {
 
 class _StoreDataScreenState extends State<StoreDataScreen> {
   final _formKey = GlobalKey<FormState>();
-   UsuarioRegistroData registroData = UsuarioRegistroData();
 
   final _nombreTiendaCtrl = TextEditingController();
   final _encargadoCtrl = TextEditingController();
   final _telefonoCtrl = TextEditingController();
   final _direccionCtrl = TextEditingController();
   final _codigoTiendaCtrl = TextEditingController();
-
-  File? _logoTienda;
-  bool _isUploading = false;
-
-  @override
-  void initState() {
-    super.initState();
-    // NOTA: No pre-llenamos el encargado, se deja vacío según requerimiento.
-  }
 
   @override
   void dispose() {
@@ -51,75 +32,22 @@ class _StoreDataScreenState extends State<StoreDataScreen> {
     super.dispose();
   }
 
-  void _onNextPressed() async {
+  void _onNextPressed() {
     // 1. Validar formulario
     if (!_formKey.currentState!.validate()) return;
 
-<<<<<<< HEAD
-    setState(() => _isUploading = true);
-    String? urlLogo;
-
-    // 2. Subir Logo solo si existe (es opcional)
-    if (_logoTienda != null) {
-      showDialog(
-        context: context,
-        barrierDismissible: false,
-        builder: (context) => const Center(child: CircularProgressIndicator()),
-      );
-
-      final firebaseService = FirebaseService();
-      urlLogo = await firebaseService.uploadImage(_logoTienda!, 'logos_tiendas');
-
-      if (mounted) Navigator.pop(context); // Cerrar loading
-
-      if (urlLogo == null) {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Error al subir el logo, intenta de nuevo.'), backgroundColor: Colors.red),
-          );
-        }
-        setState(() => _isUploading = false);
-        return;
-      }
-    }
-
-    setState(() => _isUploading = false);
-
-    // 3. Crear DTO con la URL
+    // 2. Crear DTO (Sin logo)
     final tienda = TiendaCrearDTO(
-=======
-    // --- CAMBIO AQUÍ: Usamos TiendaCrearDTO ---
-    final  tienda = TiendaDTO(
->>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
       nombreTienda: _nombreTiendaCtrl.text,
       nombreEncargado: _encargadoCtrl.text,
       telefono: _telefonoCtrl.text,
       direccion: _direccionCtrl.text,
-<<<<<<< HEAD
       codigoTienda: _codigoTiendaCtrl.text,
-      // Aunque el campo se llame logoBase64 en el DTO (por compatibilidad legacy),
-      // le pasamos la URL de Firebase que es un String.
-      logoBase64: urlLogo,
     );
 
-    // 4. Guardar y Avanzar
-    if (mounted) {
-      context.read<RegisterProvider>().setTienda(tienda);
-      context.push('/credit-data');
-    }
-=======
-// Campo nuevo
-     
-
-    );
-    final List<TiendaDTO> listaTienda = [tienda];
-  registroData.cliente ??= ClienteDTO(); // Crear cliente si no existe
-registroData.cliente!.tiendas = [];
-registroData.cliente!.tiendas!.add(tienda);
-
-  //  context.read<RegisterProvider>().setTienda(tienda);
+    // 3. Guardar y Avanzar
+    context.read<RegisterProvider>().setTienda(tienda);
     context.push('/credit-data');
->>>>>>> 416748d793b36000680975f7e27775fbe2bccb44
   }
 
   @override
@@ -132,16 +60,7 @@ registroData.cliente!.tiendas!.add(tienda);
           key: _formKey,
           child: Column(
             children: [
-              // Sección de Logo
-              Center(
-                child: SizedBox(
-                  width: 150,
-                  child: PhotoUploadCard(
-                    label: 'Logo Tienda (Opcional)',
-                    onImageSelected: (file) => _logoTienda = file,
-                  ),
-                ),
-              ),
+              const Icon(Icons.store_rounded, size: 80, color: Color(0xFF1A237E)),
               const SizedBox(height: 20),
 
               CustomTextField(
@@ -190,7 +109,7 @@ registroData.cliente!.tiendas!.add(tienda);
                 width: double.infinity,
                 height: 55,
                 child: ElevatedButton(
-                  onPressed: _isUploading ? null : _onNextPressed,
+                  onPressed: _onNextPressed,
                   child: const Text('SIGUIENTE: DATOS CRÉDITO'),
                 ),
               ),

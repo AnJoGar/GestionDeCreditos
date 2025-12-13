@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:trabajo1/models/usuario_dto.dart';
 
 class UsuarioService {
-  final String baseUrl = "https://localhost:7067/api";
+  final String baseUrl = "https://10.0.2.2:7067/api";
 
   Future<dynamic> iniciarSesion(String correo, String clave) async {
     final url = Uri.parse("$baseUrl/Usuario//IniciarSesion");
